@@ -1,0 +1,43 @@
+<div class="contents">
+  <% @lyrics.each do |lyric| %>
+    <div class="content">
+      <span class="word">
+        <%= lyric.word %>
+      </span>
+      <div class="right-content">
+        <%= link_to '詳細', lyric_path(lyric.id), method: :get %>
+        <%= link_to '編集', edit_lyric_path(lyric.id), method: :get %>
+        <%= link_to '削除', lyric_path(lyric.id), class: "delete-btn", method: :delete %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%# <div class="contents">
+  <div class="content">
+    <div class="upper-content">
+      <div class="word">
+        小さな絶望の積み重ねが、人を大人にさせる
+      </div>
+    </div>
+    <div class="lower-content">
+      <div class="user-name">
+        ナナミン
+      </div>
+    </div>
+  </div>
+</div>
+<div class="contents">
+  <div class="content">
+    <div class="upper-content">
+      <div class="word">
+        しがらみは忘れるものではなく、断ち切るものだ
+      </div>
+    </div>
+    <div class="lower-content">
+      <div class="user-name">
+        クロロ
+      </div>
+    </div>
+  </div>
+</div> %>
