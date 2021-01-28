@@ -1,4 +1,6 @@
 class LyricsController < ApplicationController
+  before_action :set_lyric, only: [:edit, :show]
+
   def index
     @lyrics = Lyric.all.order("created_at DESC")
   end
@@ -26,11 +28,9 @@ class LyricsController < ApplicationController
   end
 
   def edit
-    @lyric = Lyric.find(params[:id])
   end
 
   def update
-    @lyric = Lyric.find(params[:id])
     if @lyric.update(lyric_params)
       redirect_to root_path
     else
@@ -38,8 +38,16 @@ class LyricsController < ApplicationController
     end
   end
 
+  def show
+    @lyric = Lyric.find(params[:id])
+  end
+
   private
   def lyric_params
     params.require(:lyric).permit(:word, :text)
+  end
+
+  def set_lyric
+    @lyric = Lyric.find(params[:id])
   end
 end

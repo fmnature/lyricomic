@@ -1,0 +1,18 @@
+<div class="new-contents">
+  <div class="container">
+    <div class="more">
+      <ul class="more_list">
+        <li>
+          <%= link_to '編集', edit_lyric_path(@lyric.id), method: :get %>
+        </li>
+        <li>
+          <%= link_to '削除', lyric_path(@lyric.id), method: :delete %>
+        </li>
+      </ul>
+    </div>
+    <span class="name">
+      <%= @lyric.word %>
+    </span>
+    <p><%= @lyric.text %></p>
+  </div>
+</div>
