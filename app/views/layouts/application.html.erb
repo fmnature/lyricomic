@@ -4,12 +4,22 @@
     <title>Lyricomic</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header class="header">
+      <div class="header-left">
+        <h1 class="app_name"><a href="/">Lyricomic</a></h1>
+      </div>
+      <div class="header-right">
+        <%# <a class="lig_in" href="#">新規登録</a> %>
+        <a class="create-lyric" href="#">投稿</a>
+      </div>
+    </div>
+    </header>
     <%= yield %>
   </body>
 </html>
