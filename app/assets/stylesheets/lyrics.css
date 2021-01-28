@@ -14,7 +14,7 @@ a {
 }
 
 .create-lyric {
-  padding: 11px 30px;
+  padding: 11px 28px;
   background-color: #b44f07;
   border-radius: 100vh;
   text-decoration: none;
@@ -42,16 +42,86 @@ a.btn--radius {
   display: flex;
 }
 
+/* メインバー編集 */
+
+.main-bar {
+  background-color: rgb(15, 31, 15);
+  width: calc(100vw - 300px);
+}
+
+.contents {
+  font-size: 20px;
+  color: white;
+  background-color: rgb(15, 31, 15);
+}
+
+.content {
+  border-top: 0.5px solid #757061;
+  padding: 40px 20px;
+}
+
+.word {
+  font-size: 18px;
+}
+
+.user-name {
+  text-align: right;
+}
+
+.right-content {
+  text-align: right;
+}
+
+/* リリック投稿機能 */
+
+h3{
+  margin-top: 10px;
+}
+
+.new-contents{
+  color:white;
+  background-color: rgb(15, 31, 15);
+  height: 100vh;
+}
+
+.container{
+  margin: 0 auto;
+  text-align: center;
+  width: 500px;
+  height: 500px;
+  border: 0.5px solid #757061;
+}
+
+form input,
+form textarea {
+  color: #fff;
+  width: 100%;
+  margin: 10px 0;
+  background-color: rgb(15, 31, 15);
+  padding: 10px;
+  border: 0.5px solid #757061;
+  font-family: "游ゴシック", "YuGothic";
+}
+
+form input[type="submit"] {
+  width: 180px;
+  background-color: #b44f07;
+  border-radius: 20px;
+  color: #fff;
+  border: 0;
+  font-size: 18px;
+}
+
+form input[type="submit"]:hover {
+  background-color: #f56500;
+}
+
+/* サイドバー編集 */
 .left-side-bar {
   background-color:rgb(15, 31, 15);
   width: 400px;
   height: 100vh;
   border-right: 0.5px solid #757061;
-}
-
-.main-bar {
-  background-color: rgb(15, 31, 15);
-  width: calc(100vw - 300px);
 }
 
 .right-side-bar {
