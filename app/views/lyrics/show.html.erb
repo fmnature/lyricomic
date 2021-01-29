@@ -1,16 +1,12 @@
-<div class="new-contents">
+<div class="contents">
   <div class="container">
     <div class="more">
-      <ul class="more_list">
-        <li>
-          <%= link_to '編集', edit_lyric_path(@lyric.id), method: :get %>
-        </li>
-        <li>
-          <%= link_to '削除', lyric_path(@lyric.id), method: :delete %>
-        </li>
-      </ul>
+      <% if user_signed_in? && current_user.id == @lyric.user_id %>
+        <%= link_to '編集', edit_lyric_path(@lyric.id), method: :get %>
+        <%= link_to '削除', lyric_path(@lyric.id), method: :delete %>
+      <% end %>
     </div>
-    <span class="name">
+    <span class="show-word">
       <%= @lyric.word %>
     </span>
     <p><%= @lyric.text %></p>

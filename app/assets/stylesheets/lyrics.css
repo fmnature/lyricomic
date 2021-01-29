@@ -14,7 +14,8 @@ a {
 }
 
 .create-lyric {
-  padding: 11px 28px;
+  margin-left: 20px;
+  padding: 11px 27px;
   background-color: #b44f07;
   border-radius: 100vh;
   text-decoration: none;
@@ -23,6 +24,23 @@ a {
 .create-lyric:hover {
   background: #f56500;
 }
+
+.post {
+  padding: 11px 27px;
+  background-color: #b44f07;
+  border-radius: 100vh;
+  text-decoration: none;
+}
+
+.post:hover {
+  background: #f56500;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
 
 /* .btn--orange,
 a.btn--orange {
@@ -53,6 +71,7 @@ a.btn--radius {
   font-size: 20px;
   color: white;
   background-color: rgb(15, 31, 15);
+  height: 100vh;
 }
 
 .content {
@@ -78,17 +97,11 @@ h3{
   margin-top: 10px;
 }
 
-.new-contents{
-  color:white;
-  background-color: rgb(15, 31, 15);
-  height: 100vh;
-}
-
 .container{
   margin: 0 auto;
   text-align: center;
-  width: 500px;
-  height: 500px;
+  width: 700px;
+  height: 700px;
   border: 0.5px solid #757061;
 }
 

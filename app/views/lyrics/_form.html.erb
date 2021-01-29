@@ -1,0 +1,5 @@
+<%= form_with(model: lyric, local: true) do |form| %>
+  <%= form.text_field :word, placeholder: "詩" , rows: "3" %>
+  <%= form.text_area :text, placeholder: "概要欄", rows: "2" %>
+  <%= form.submit "投稿" %>
+<% end %>

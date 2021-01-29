@@ -1,8 +1,9 @@
 class LyricsController < ApplicationController
-  before_action :set_lyric, only: [:edit, :show]
+  before_action :set_lyric, only: [:edit, :show, :update, :destroy]
+  before_action :move_to_index, except: [:index, :show]
 
   def index
-    @lyrics = Lyric.all.order("created_at DESC")
+    @lyrics = Lyric.all.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -19,7 +20,6 @@ class LyricsController < ApplicationController
   end
 
   def destroy
-    @lyric = Lyric.find(params[:id])
     if @lyric.destroy
       redirect_to root_path
     else
@@ -32,7 +32,7 @@ class LyricsController < ApplicationController
 
   def update
     if @lyric.update(lyric_params)
-      redirect_to root_path
+      redirect_to lyric_path(params[:id])
     else
       render :edit
     end
@@ -44,10 +44,16 @@ class LyricsController < ApplicationController
 
   private
   def lyric_params
-    params.require(:lyric).permit(:word, :text)
+    params.require(:lyric).permit(:word, :text).merge(user_id: current_user.id)
   end
 
   def set_lyric
     @lyric = Lyric.find(params[:id])
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 end
