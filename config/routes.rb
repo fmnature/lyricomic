@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "lyrics#index"
-  resources :lyrics
+  resources :lyrics do
+    resources :comments, only: :create
+  end
   resources :users, only: :show
 end

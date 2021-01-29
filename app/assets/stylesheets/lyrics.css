@@ -71,12 +71,24 @@ a.btn--radius {
   font-size: 20px;
   color: white;
   background-color: rgb(15, 31, 15);
+  height: 100%;
+}
+
+.tem {
   height: 100vh;
 }
 
 .content {
+  background-color: rgb(15, 31, 15);
   border-top: 0.5px solid #757061;
   padding: 40px 20px;
+}
+
+.comment {
+  margin: 0 auto;
+  text-align: center;
+  border: 0.5px solid #757061;
+  width: 700px;
 }
 
 .word {
@@ -101,7 +113,7 @@ h3{
   margin: 0 auto;
   text-align: center;
   width: 700px;
-  height: 700px;
+  height: 600px;
   border: 0.5px solid #757061;
 }
 

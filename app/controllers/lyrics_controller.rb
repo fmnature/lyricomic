@@ -39,7 +39,8 @@ class LyricsController < ApplicationController
   end
 
   def show
-    @lyric = Lyric.find(params[:id])
+    @comment = Comment.new
+    @comments = @lyric.comments.includes(:user)
   end
 
   private
