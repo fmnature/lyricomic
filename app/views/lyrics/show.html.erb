@@ -1,7 +1,7 @@
 <div class="contents">
   <div class="container">
     <div class="more">
-      <% if user_signed_in? && current_user.id == lyric.user_id %>
+      <% if user_signed_in? && current_user.id == @lyric.user_id %>
         <%= link_to '編集', edit_lyric_path(@lyric.id), method: :get %>
         <%= link_to '削除', lyric_path(@lyric.id), method: :delete %>
       <% end %>

@@ -1,5 +1,5 @@
 class LyricsController < ApplicationController
-  before_action :set_lyric, only: [:edit, :show]
+  before_action :set_lyric, only: [:edit, :show, :update, :destroy]
   before_action :move_to_index, except: [:index, :show]
 
   def index
@@ -20,7 +20,6 @@ class LyricsController < ApplicationController
   end
 
   def destroy
-    @lyric = Lyric.find(params[:id])
     if @lyric.destroy
       redirect_to root_path
     else
@@ -33,7 +32,7 @@ class LyricsController < ApplicationController
 
   def update
     if @lyric.update(lyric_params)
-      redirect_to root_path
+      redirect_to lyric_path(params[:id])
     else
       render :edit
     end
