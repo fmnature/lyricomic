@@ -45,7 +45,7 @@ class LyricsController < ApplicationController
 
   private
   def lyric_params
-    params.require(:lyric).permit(:word, :text)
+    params.require(:lyric).permit(:word, :text).merge(user_id: current_user.id)
   end
 
   def set_lyric
