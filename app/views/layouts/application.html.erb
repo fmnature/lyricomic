@@ -17,7 +17,7 @@
       <div class="header-right">
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
-            <%= link_to current_user.nickname, "#"%>
+            <%= link_to current_user.nickname, user_path(current_user.id)%>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post" %>
             <%= link_to "投稿", new_lyric_path, class: "create-lyric"%>
           </div>
