@@ -7,8 +7,10 @@
       <div class="right-content">
         <%= link_to lyric.user.nickname, user_path(lyric.user.id), method: :get %>
         <%= link_to '詳細', lyric_path(lyric.id), method: :get %>
-        <%= link_to '編集', edit_lyric_path(lyric.id), method: :get %>
-        <%= link_to '削除', lyric_path(lyric.id), class: "delete-btn", method: :delete %>
+        <% if user_signed_in? && current_user.id == lyric.user_id %>
+          <%= link_to '編集', edit_lyric_path(lyric.id), method: :get %>
+          <%= link_to '削除', lyric_path(lyric.id), class: "delete-btn", method: :delete %>
+        <% end %>
       </div>
     </div>
   <% end %>

@@ -3,7 +3,7 @@ class LyricsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @lyrics = Lyric.all.order("created_at DESC")
+    @lyrics = Lyric.all.includes(:user).order("created_at DESC")
   end
 
   def new

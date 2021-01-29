@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   def show
-    @lyrics = Lyric.includes(:user)
+    user = User.find(params[:id])
+    @nickname = user.nickname
+    @lyrics = user.lyrics
   end
 end
