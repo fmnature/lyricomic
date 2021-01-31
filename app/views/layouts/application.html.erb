@@ -14,10 +14,16 @@
       <div class="header-left">
         <h1 class="app_name"><a href="/">Lyricomic</a></h1>
       </div>
+      <div class="header-main">
+        <%= form_with(url: search_lyrics_path, local: true, method: :get, class: "search-form") do |form| %>
+          <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+          <%= form.submit "検索", class: "search-btn" %>
+        <% end %>
+      </div>
       <div class="header-right">
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
-            <%= link_to current_user.nickname, user_path(current_user.id)%>
+            <%= link_to current_user.nickname, user_path(current_user.id), class: "user-name" %>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post" %>
             <%= link_to "投稿", new_lyric_path, class: "create-lyric"%>
           </div>

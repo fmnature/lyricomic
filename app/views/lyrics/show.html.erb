@@ -1,14 +1,34 @@
 <div class="contents">
   <div class="container">
+    <span class="show-word">
+      <%= @lyric.word %>
+    </span>
+    <p><%= @lyric.text %></p>
     <div class="more">
       <% if user_signed_in? && current_user.id == @lyric.user_id %>
         <%= link_to '編集', edit_lyric_path(@lyric.id), method: :get %>
         <%= link_to '削除', lyric_path(@lyric.id), method: :delete %>
       <% end %>
     </div>
-    <span class="show-word">
-      <%= @lyric.word %>
-    </span>
-    <p><%= @lyric.text %></p>
+  </div>
+  <div class="content com">
+    <% if user_signed_in? %>
+      <%= form_with(model: [@lyric, @comment], local: true) do |form| %>
+        <%= form.text_area :content, placeholder: "コメントする", rows: "2" %>
+        <%= form.submit "SEND" %>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+    <div class="comments">
+      <% @comments.each do |comment| %>
+        <div class="comment">
+          <p>
+            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <%= comment.content %>
+          </p>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

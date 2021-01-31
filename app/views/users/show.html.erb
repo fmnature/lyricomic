@@ -1,11 +1,13 @@
-<div class="contents">
+<div class="contents tem">
   <div class="container">
     <p><%= @nickname %>さんの投稿一覧</p>
-    <% @lyrics.each do |lyric| %>
-      <span class="word">
-        <%= lyric.word %>
-      </span>
-      <p><%= lyric.text %></p>
-    <% end %>
+      <% @lyrics.each do |lyric| %>
+        <div class="comment">
+          <span class="word">
+            <%= lyric.word %>
+          </span>
+          <p><%= lyric.text %></p>
+        </div>
+      <% end %>
   </div>
 </div>
