@@ -11,7 +11,7 @@
       <% end %>
     </div>
   </div>
-  <div class="content comment">
+  <div class="content com">
     <% if user_signed_in? %>
       <%= form_with(model: [@lyric, @comment], local: true) do |form| %>
         <%= form.text_area :content, placeholder: "コメントする", rows: "2" %>
@@ -21,12 +21,13 @@
       <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
     <% end %>
     <div class="comments">
-      <h4>＜コメント一覧＞</h4>
       <% @comments.each do |comment| %>
-        <p>
-          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
-          <%= comment.content %>
-        </p>
+        <div class="comment">
+          <p>
+            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <%= comment.content %>
+          </p>
+        </div>
       <% end %>
     </div>
   </div>
