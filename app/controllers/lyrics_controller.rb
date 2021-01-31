@@ -49,7 +49,7 @@ class LyricsController < ApplicationController
 
   private
   def lyric_params
-    params.require(:lyric).permit(:word, :text).merge(user_id: current_user.id)
+    params.require(:lyric).permit(:word, :text, :image).merge(user_id: current_user.id)
   end
 
   def set_lyric
