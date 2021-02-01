@@ -4,6 +4,7 @@ class LyricsController < ApplicationController
 
   def index
     @lyrics = Lyric.all.includes(:user).order("created_at DESC")
+    @user = User.find(current_user.id)
   end
 
   def new
