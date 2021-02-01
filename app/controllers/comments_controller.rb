@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   def create
     comment = Comment.create(comment_params)
+    @user = User.find(comment.user_id)
     redirect_to lyric_path(comment.lyric.id)
   end
 

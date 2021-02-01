@@ -1,5 +1,7 @@
-<div class="contents">
-  <div class="container">
+<%= render "shared/header" %>
+
+<div class="contents tem">
+  <div class="content">
     <span class="show-word">
       <%= @lyric.word %>
     </span>
@@ -11,6 +13,7 @@
       <% end %>
     </div>
   </div>
+
   <div class="content com">
     <% if user_signed_in? %>
       <%= form_with(model: [@lyric, @comment], local: true) do |form| %>
@@ -24,6 +27,7 @@
       <% @comments.each do |comment| %>
         <div class="comment">
           <p>
+            <%= image_tag(@user.image.url, class: "icon-mini") %>
             <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
             <%= comment.content %>
           </p>
@@ -31,4 +35,5 @@
       <% end %>
     </div>
   </div>
+  
 </div>

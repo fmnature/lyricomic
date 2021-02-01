@@ -4,4 +4,8 @@ class User < ApplicationRecord
 
   has_many :lyrics
   has_many :comments
+
+  validates :profile, length: { maximum: 250 }
+  validate :image
+  mount_uploader :image, ImageUploader
 end
