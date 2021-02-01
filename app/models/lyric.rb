@@ -4,6 +4,12 @@ class Lyric < ApplicationRecord
   has_many :comments
   has_one_attached :image
 
+  validates :word, presence: true, unless: :was_attached?
+
+  def was_attached?
+    self.image.attached?
+  end
+
   def self.search(search)
     if search != ""
       Lyric.where('word LIKE(?)', "%#{search}%")

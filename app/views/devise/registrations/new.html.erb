@@ -1,4 +1,4 @@
-<div class="contents row">
+<div class="contents tem">
   <div class="container">
     <h2>ユーザー認証</h2>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
@@ -32,9 +32,13 @@
         <%= f.text_field :profile %>
       </div>
 
+      <div class="field">
+        <%= f.label "画像" %><br />
+        <%= f.file_field :image, class: 'hidden' %>
+      </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "登録" %>
       </div>
     <% end %>
   </div>
