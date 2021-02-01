@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
-<div class="contents">
-  <div class="container">
+<div class="contents tem">
+  <div class="content">
     <span class="show-word">
       <%= @lyric.word %>
     </span>
@@ -13,6 +13,7 @@
       <% end %>
     </div>
   </div>
+
   <div class="content com">
     <% if user_signed_in? %>
       <%= form_with(model: [@lyric, @comment], local: true) do |form| %>
@@ -34,4 +35,5 @@
       <% end %>
     </div>
   </div>
+  
 </div>

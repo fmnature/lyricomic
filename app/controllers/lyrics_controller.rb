@@ -1,7 +1,7 @@
 class LyricsController < ApplicationController
   before_action :set_lyric, only: [:edit, :show, :update, :destroy]
   before_action :move_to_index, except: [:index, :show, :search]
-  before_action :set_user, only: [:index, :show, :edit, :new]
+  before_action :set_user, only: [:index, :show, :edit, :new, :search]
 
 
   def index
