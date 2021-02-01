@@ -6,6 +6,7 @@
       </span>
       <%= image_tag lyric.image.variant(resize: '500x500'), class: 'lyric-image' if lyric.image.attached? %>
       <div class="right-content">
+        <%= link_to image_tag(lyric.user.image.url, class: "icon-mini"), user_path(lyric.user.id)%>
         <%= link_to lyric.user.nickname, user_path(lyric.user.id), method: :get %>
         <%= link_to '詳細', lyric_path(lyric.id), method: :get %>
         <% if user_signed_in? && current_user.id == lyric.user_id %>

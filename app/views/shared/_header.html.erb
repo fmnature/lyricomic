@@ -11,7 +11,7 @@
     <div class="header-right">
       <% if user_signed_in? %>
         <div class="user-right">
-          <%= link_to image_tag(@user.image.url, class: "icon_mini"), user_path(current_user.id)%>
+          <%= link_to image_tag(@user.image.url, class: "icon-mini"), user_path(current_user.id)%>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post" %>
           <%= link_to "投稿", new_lyric_path, class: "create-lyric"%>
         </div>
