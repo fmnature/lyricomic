@@ -1,11 +1,13 @@
 <%= render "shared/header" %>
 <div class="scroll" data-max="20" data-lastnum="2">
-  <div class="contents tem">
-    <div class="container">
-      <p><%= @nickname %>さんのプロフィール</p>
+  <div class="contents">
 
+    
+      <p><%= @nickname %>のプロフィール</p>
       <img src=<%= @image %> class = "icon-image">
-
+      <div class="follow">
+        <%= render "relationships/follow_button", user: @user %>
+      </div>
       <div class="conteaner row">
         <% if user_signed_in? && current_user.id == @id %>
           <%= link_to '編集', edit_user_registration_path(@id), method: :get %>
@@ -13,7 +15,8 @@
         <% end %>
       </div>
 
-      <p><%= @nickname %>さんの投稿一覧</p>
+
+      <p><%= @nickname %>の名言</p>
         <% @lyrics.each do |lyric| %>
           <div class="comment">
             <span class="word">
@@ -22,6 +25,7 @@
             <p><%= lyric.text %></p>
           </div>
         <% end %>
-    </div>
+    
+
   </div>
 </div>
