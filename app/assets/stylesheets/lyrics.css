@@ -218,12 +218,6 @@ a {
 	margin:1px;
 } */
 
-/* フォロー機能 */
-.follow {
-  display: block;
-  border: coral;
-}
-
 /* リリック投稿機能 */
 
 h3{
@@ -239,6 +233,7 @@ h3{
   border: 0.5px solid rgb(31, 48, 31);
 }
 
+.follow form input,
 .contents form input,
 .contents form textarea {
   color: #fff;
@@ -250,6 +245,7 @@ h3{
   font-family: "游ゴシック", "YuGothic";
 }
 
+.follow form input[type="submit"],
 .content form input[type="submit"],
 .container form input[type="submit"] {
   width: 180px;
@@ -260,9 +256,16 @@ h3{
   font-size: 18px;
 }
 
+.follow form input[type="submit"]:hover,
 .content form input[type="submit"]:hover,
 .container form input[type="submit"]:hover {
   background-color: #f56500;
+}
+
+/* フォロー機能 */
+
+.follow {
+  padding:30px 0;
 }
 
 /* サイドバー編集 */
