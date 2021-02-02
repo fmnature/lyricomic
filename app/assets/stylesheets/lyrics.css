@@ -1,3 +1,9 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+  
+
 .header {
   background-color:rgb(15, 31, 15);
   border-bottom: 0.5px solid rgb(31, 48, 31);
@@ -129,13 +135,14 @@ h3 {
 .main-bar {
   background-color: rgb(15, 31, 15);
   width: calc(100vw - 300px);
+  height: 100vh; 
 }
 
 .contents {
   font-size: 20px;
   color: white;
   background-color: rgb(13, 26, 13);
-  height: 100%;
+  height: calc(100vh - 55px);
 }
 
 .tem {
@@ -184,6 +191,18 @@ h3 {
 .right-content {
   text-align: right;
 }
+
+/* 無限スクロール */
+
+.scroll {
+	overflow:auto;
+}
+
+/* .scroll img {
+	height:180px;
+	display:block;
+	margin:1px;
+} */
 
 /* リリック投稿機能 */
 
