@@ -1,25 +1,27 @@
 <%= render "shared/header" %>
-<div class="contents tem">
-  <div class="container">
-    <p><%= @nickname %>さんのプロフィール</p>
+<div class="scroll" data-max="20" data-lastnum="2">
+  <div class="contents tem">
+    <div class="container">
+      <p><%= @nickname %>さんのプロフィール</p>
 
-    <img src=<%= @image %> class = "icon-image">
+      <img src=<%= @image %> class = "icon-image">
 
-    <div class="conteaner row">
-      <% if user_signed_in? && current_user.id == @id %>
-        <%= link_to '編集', edit_user_registration_path(@id), method: :get %>
-        <%= link_to '削除', user_path(@id), method: :delete %>
-      <% end %>
+      <div class="conteaner row">
+        <% if user_signed_in? && current_user.id == @id %>
+          <%= link_to '編集', edit_user_registration_path(@id), method: :get %>
+          <%= link_to '削除', user_path(@id), method: :delete %>
+        <% end %>
+      </div>
+
+      <p><%= @nickname %>さんの投稿一覧</p>
+        <% @lyrics.each do |lyric| %>
+          <div class="comment">
+            <span class="word">
+              <%= lyric.word %>
+            </span>
+            <p><%= lyric.text %></p>
+          </div>
+        <% end %>
     </div>
-
-    <p><%= @nickname %>さんの投稿一覧</p>
-      <% @lyrics.each do |lyric| %>
-        <div class="comment">
-          <span class="word">
-            <%= lyric.word %>
-          </span>
-          <p><%= lyric.text %></p>
-        </div>
-      <% end %>
   </div>
 </div>

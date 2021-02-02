@@ -1,39 +1,39 @@
 <div class="scroll" data-max="20" data-lastnum="2">
-<div class="contents">
-  <% @lyrics.each do |lyric| %>
-    <%# <% @likes.each do |like| %>
-      <div class="content">
-        <%= link_to(lyric_path(lyric.id), method: :get, class: "link-content") do %>
+  <div class="contents">
+    <% @lyrics.each do |lyric| %>
+      <%# <% @likes.each do |like| %>
+        <div class="content">
+          <%= link_to(lyric_path(lyric.id), method: :get, class: "link-content") do %>
 
-          <span class="word"><%= lyric.word %></span>
+            <span class="word"><%= lyric.word %></span>
 
-          <%= image_tag lyric.image.variant(resize: '500x500'), class: 'lyric-image' if lyric.image.attached? %>
+            <%= image_tag lyric.image.variant(resize: '500x500'), class: 'lyric-image' if lyric.image.attached? %>
 
-          <div class="right-content">
-            <%= link_to image_tag(lyric.user.image.url, class: "icon-mini"), user_path(lyric.user.id)%>
-            <%= link_to lyric.user.nickname, user_path(lyric.user.id), method: :get %>
-            <%= link_to '一覧', lyric_path(lyric.id), method: :get %>
+            <div class="right-content">
+              <%= link_to image_tag(lyric.user.image.url, class: "icon-mini"), user_path(lyric.user.id)%>
+              <%= link_to lyric.user.nickname, user_path(lyric.user.id), method: :get %>
+              <%= link_to '一覧', lyric_path(lyric.id), method: :get %>
 
-            <!-- <% if user_signed_in? && current_user.id == lyric.user_id %>
-              <%= link_to '編集', edit_lyric_path(lyric.id), method: :get %>
-              <%= link_to '削除', lyric_path(lyric.id), class: "delete-btn", method: :delete %>
-            <% end %> -->
+              <!-- <% if user_signed_in? && current_user.id == lyric.user_id %>
+                <%= link_to '編集', edit_lyric_path(lyric.id), method: :get %>
+                <%= link_to '削除', lyric_path(lyric.id), class: "delete-btn", method: :delete %>
+              <% end %> -->
 
-          </div>
-          <h3>いいね件数: <%= lyric.likes.count %></h3>
-          <% if user_signed_in? %>
-            <div class="like-content">
-              <% if current_user.already_liked?(lyric) %>
-                <%# <%= button_to 'いいねを取り消す', lyric_like_path(lyric.id,like.id), method: :delete %>
-              <% else %>
-                <%= button_to 'いいね', lyric_likes_path(lyric), class: "like-btn" %>
-              <% end %>
             </div>
+            <h3>いいね件数: <%= lyric.likes.count %></h3>
+            <% if user_signed_in? %>
+              <div class="like-content">
+                <% if current_user.already_liked?(lyric) %>
+                  <%# <%= button_to 'いいねを取り消す', lyric_like_path(lyric.id,like.id), method: :delete %>
+                <% else %>
+                  <%= button_to 'いいね', lyric_likes_path(lyric), class: "like-btn" %>
+                <% end %>
+              </div>
+            <% end %>
+        
           <% end %>
-      
-        <% end %>
-      </div>
-    <%# <% end %>
-  <% end %>
-</div>
+        </div>
+      <%# <% end %>
+    <% end %>
+  </div>
 </div>
