@@ -6,7 +6,12 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    
+  end
+
+  def destroy
+    @comment = Comment.find_by(lyric_id: params[:lyric_id], user_id: current_user.id)
+    @comment.destroy
+    redirect_to lyric_path(@comment.lyric.id)
   end
 
   private
