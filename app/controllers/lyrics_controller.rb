@@ -6,6 +6,7 @@ class LyricsController < ApplicationController
 
   def index
     @lyrics = Lyric.all.includes(:user).order("created_at DESC")
+    # @likes = Like.all
   end
 
   def new
@@ -43,6 +44,7 @@ class LyricsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @lyric.comments.includes(:user)
+    @like = Like.new
   end
 
   def search

@@ -2,6 +2,7 @@ class Lyric < ApplicationRecord
   validates :word, presence: true
   belongs_to :user
   has_many :comments
+  has_many :likes
   has_one_attached :image
 
   validates :word, presence: true, unless: :was_attached?
