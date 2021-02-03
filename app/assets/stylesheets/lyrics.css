@@ -117,6 +117,10 @@ a {
   display:flex;
 }
 
+.user-profile {
+  padding: 20px;
+}
+
 /* コメント機能 */
 .comments {
   margin-top: 20px;
@@ -229,7 +233,7 @@ h3{
   margin: 0 auto;
   text-align: center;
   width: 700px;
-  height: 600px;
+  height: 100%;
   border: 0.5px solid rgb(31, 48, 31);
 }
 

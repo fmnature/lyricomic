@@ -10,7 +10,6 @@ class UsersController < ApplicationController
     @profile = user.profile
     @lyrics = user.lyrics.order("created_at DESC")
 
-
   end
 
   def edit

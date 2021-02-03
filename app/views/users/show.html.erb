@@ -4,8 +4,10 @@
     <%# <div class="content"> %>
 
     <div class="user-profile">
-      <p><%= @nickname %>のプロフィール</p>
+      
       <img src=<%= @image %> class = "icon-image">
+      <h1><%= @nickname %></h1>
+      <p><%= @profile %></p>
 
       <div class="follow">
       <p>フォロー</p>
@@ -18,6 +20,7 @@
           <%= link_to '削除', user_path(@id), method: :delete %>
         <% end %>
       </div>
+
     </div>
 
       <p><%= @nickname %>の名言</p>
