@@ -5,6 +5,7 @@ class CreateLikes < ActiveRecord::Migration[6.0]
       t.references :lyric, null: false, foreign_key: true
 
       t.timestamps
+      t.index [:user_id, :lyric_id], unique: true
     end
   end
 end

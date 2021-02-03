@@ -1,7 +1,7 @@
 <div class="scroll" data-max="20" data-lastnum="2">
   <div class="contents">
     <% @lyrics.each do |lyric| %>
-      <%# <% @likes.each do |like| %>
+      <%# <% @likes.each do |like|  %>
         <div class="content">
           <%= link_to(lyric_path(lyric.id), method: :get, class: "link-content") do %>
             <%= image_tag lyric.image.variant(resize: '500x500'), class: 'lyric-image' if lyric.image.attached? %>
@@ -17,14 +17,13 @@
               </div>
 
               <div class="left-content">
-                <h3>いいね件数: <%= lyric.likes.count %></h3>
                 <% if user_signed_in? %>
                   <div class="like-content">
                     <% if current_user.already_liked?(lyric) %>
-                      <%= link_to lyric_likes_path(lyric), method: :post do %>
+                      <%= link_to "/lyrics/#{lyric.id}/likes/#{lyric.likes.ids}", method: :delete do %>
                         <i class="fa fa-heart unlike-btn" ></i>
+                        <%= lyric.likes.count %>
                       <% end %>
-                      <%# <%= button_to 'いいねを取り消す', lyric_like_path(lyric.id,like.id), method: :delete %>
                     <% else %>
                       <%= link_to lyric_likes_path(lyric), method: :post do %>
                         <i class="fa fa-heart like-btn" ></i>
@@ -38,7 +37,7 @@
 
           <% end %>
         </div>
-      <%# <% end %>
+      <%# <% end  %>
     <% end %>
   </div>
 </div>

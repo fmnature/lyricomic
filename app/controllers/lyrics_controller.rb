@@ -4,6 +4,7 @@ class LyricsController < ApplicationController
 
   def index
     @lyrics = Lyric.all.includes(:user).order("created_at DESC")
+    # @like = current_user.likes.find_by(user_id: current_user.id)  
     # @likes = Like.all
   end
 
