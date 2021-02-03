@@ -98,16 +98,6 @@ a {
   display: flex;
 }
 
-.comments {
-  margin-top: 20px;
-}
-
-.comment {
-  text-align: left;
-  border-top: 0.5px solid rgb(31, 48, 31);
-  padding: 30px 0;
-}
-
 .icon-image {
   width: 200px;
   height: 200px;
@@ -126,6 +116,33 @@ a {
 .user-right {
   display:flex;
 }
+
+.user-profile {
+  padding: 20px;
+}
+
+/* コメント機能 */
+.comments {
+  margin-top: 20px;
+}
+
+.comment {
+  text-align: left;
+  border-top: 0.5px solid rgb(31, 48, 31);
+  padding: 40px 0;
+  background-color: rgb(10, 20, 10);
+}
+
+.comment:hover {
+  background-color: rgb(13, 32, 13);
+  transition-duration: 0.2s;
+}
+
+/* .comment:hover {
+  background-color: rgb(13, 32, 13);
+  transition-duration: 0.2s;
+} */
+
 
 /* メインバー編集 */
 
@@ -153,29 +170,51 @@ a {
   padding: 40px 20px;
 }
 
+/* .row-content{
+  display:flex;
+} */
+
 .link-content {
   display: block;
-  position: absolute;
+  /* position: absolute; いいねボタン(like-btn)との関係*/
   position: relative;
   width: 75%;
   height: 100%;
 }
 
-.like-btn{
+/* .like-btn{
   position: relative;
-}
+} */
 
 .content:hover{
   background-color: rgb(13, 32, 13);
   transition-duration: 0.2s;
 }
 
-.com {
+/* いいね機能 */
+
+.like-btn {
+  width: 25px;
+  height: 30px;
+  font-size: 25px;
+  color: #808080; 
+  margin-left: 20px;
+  }
+ 
+ .unlike-btn {
+  width: 25px;
+  height: 30px;
+  font-size: 25px;
+  color: #e54747;
+  margin-left: 20px;
+  }
+
+/* .com {
   margin: 0 auto;
   text-align: center;
   border: 0.5px solid rgb(31, 48, 31);
   width: 700px;
-}
+} */
 
 .word {
   font-size: 18px;
@@ -212,10 +251,11 @@ h3{
   margin: 0 auto;
   text-align: center;
   width: 700px;
-  height: 600px;
+  height: 100%;
   border: 0.5px solid rgb(31, 48, 31);
 }
 
+.follow form input,
 .contents form input,
 .contents form textarea {
   color: #fff;
@@ -227,6 +267,7 @@ h3{
   font-family: "游ゴシック", "YuGothic";
 }
 
+.follow form input[type="submit"],
 .content form input[type="submit"],
 .container form input[type="submit"] {
   width: 180px;
@@ -237,9 +278,16 @@ h3{
   font-size: 18px;
 }
 
+.follow form input[type="submit"]:hover,
 .content form input[type="submit"]:hover,
 .container form input[type="submit"]:hover {
   background-color: #f56500;
+}
+
+/* フォロー機能 */
+
+.follow {
+  padding:30px 0;
 }
 
 /* サイドバー編集 */

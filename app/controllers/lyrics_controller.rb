@@ -1,11 +1,10 @@
 class LyricsController < ApplicationController
   before_action :set_lyric, only: [:edit, :show, :update, :destroy]
   before_action :move_to_index, except: [:index, :show, :search]
-  before_action :set_user, only: [:index, :show, :edit, :new, :search]
-
 
   def index
     @lyrics = Lyric.all.includes(:user).order("created_at DESC")
+    # @like = current_user.likes.find_by(user_id: current_user.id)  
     # @likes = Like.all
   end
 
@@ -58,12 +57,6 @@ class LyricsController < ApplicationController
 
   def set_lyric
     @lyric = Lyric.find(params[:id])
-  end
-
-  def set_user
-    if user_signed_in?
-      @user = User.find(current_user.id)
-    end
   end
 
   def move_to_index

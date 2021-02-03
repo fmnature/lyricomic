@@ -1,23 +1,25 @@
-document.querySelectorAll('.scroll').forEach(elm => {
+// 更新をする際に用いるもの
 
-	elm.onscroll = function () {
+// document.querySelectorAll('.scroll').forEach(elm => {
 
-		if (this.scrollTop + this.clientHeight >= this.scrollHeight) {
-      //スクロールが末尾に達した
+// 	elm.onscroll = function () {
+
+// 		if (this.scrollTop + this.clientHeight >= this.scrollHeight) {
+//       //スクロールが末尾に達した
       
-			if (parseInt(this.dataset.lastnum) < parseInt(this.dataset.max)) {
+// 			if (parseInt(this.dataset.lastnum) < parseInt(this.dataset.max)) {
 
-        //未ロードの画像がある場合
+//         //未ロードの画像がある場合
         
-        this.dataset.lastnum = parseInt(this.dataset.lastnum) + 1;
+//         this.dataset.lastnum = parseInt(this.dataset.lastnum) + 1;
         
-        let img = document.createElement('img');
+//         let img = document.createElement('img');
         
-        img.src =  this.dataset.lastnum +'.jpg';
+//         img.src =  this.dataset.lastnum +'.jpg';
         
-        this.appendChild(img);
+//         this.appendChild(img);
 
-      }
-    }
-  };
-});
+//       }
+//     }
+//   };
+// });

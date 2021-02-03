@@ -1,27 +1,41 @@
 <%= render "shared/header" %>
 <div class="scroll" data-max="20" data-lastnum="2">
-  <div class="contents tem">
-    <div class="container">
-      <p><%= @nickname %>さんのプロフィール</p>
+  <div class="contents">
+    <%# <div class="content"> %>
 
+    <div class="user-profile">
+      
       <img src=<%= @image %> class = "icon-image">
+      <h1><%= @nickname %></h1>
+      <p><%= @profile %></p>
+
+      <div class="follow">
+        <%= render "relationships/follow_button", user: @user %>
+      </div>
 
       <div class="conteaner row">
         <% if user_signed_in? && current_user.id == @id %>
           <%= link_to '編集', edit_user_registration_path(@id), method: :get %>
           <%= link_to '削除', user_path(@id), method: :delete %>
         <% end %>
+        <%= link_to "フォロー: #{@user.followings.count}", followings_user_path(@user.id) %>
+        <%= link_to "フォロワー: #{@user.followers.count}", followers_user_path(@user.id) %>
       </div>
 
-      <p><%= @nickname %>さんの投稿一覧</p>
-        <% @lyrics.each do |lyric| %>
-          <div class="comment">
-            <span class="word">
-              <%= lyric.word %>
-            </span>
-            <p><%= lyric.text %></p>
-          </div>
-        <% end %>
     </div>
+
+      <p><%= @nickname %>の名言</p>
+        <% @lyrics.each do |lyric| %>
+          <%= link_to(lyric_path(lyric.id), method: :get) do %>
+            <div class="comment">
+              <span class="word">
+                <%= lyric.word %>
+              </span>
+              <p><%= lyric.text %></p>
+            </div>
+          <% end %>
+        <% end %>
+
+    <%# </div> %>
   </div>
 </div>
