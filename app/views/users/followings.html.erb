@@ -3,9 +3,9 @@
   <div class="contents">
   <h1>フォロー</h1>
     <% @users.each do |user| %>
-    <div class="content">
-      <%= link_to image_tag(user.image.url, class: "icon-mini"), user_path(user.id)%>
-      <%= link_to(user.nickname, user_path(@user.id)) %>
+      <div class="content">
+        <%= link_to image_tag(user.image.url, class: "icon-mini"), user_path(user.id)%>
+        <%= link_to(user.nickname, user_path(@user.id)) %>
       </div>
     <% end %>
   </div>

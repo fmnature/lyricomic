@@ -22,13 +22,13 @@
                     <% if current_user.already_liked?(lyric) %>
                       <%= link_to "/lyrics/#{lyric.id}/likes/#{lyric.likes.ids}", method: :delete do %>
                         <i class="fa fa-heart unlike-btn" ></i>
-                        <%= lyric.likes.count %>
                       <% end %>
                     <% else %>
                       <%= link_to lyric_likes_path(lyric), method: :post do %>
                         <i class="fa fa-heart like-btn" ></i>
                       <% end %>                    
                     <% end %>
+                    <%= lyric.likes.count %>
                   </div>
                 <% end %>
               </div>
