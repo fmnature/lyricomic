@@ -143,6 +143,14 @@ a {
   transition-duration: 0.2s;
 } */
 
+/* 通知機能 */
+
+.n-circle {
+  position: absolute;
+  padding-left: 1rem;
+  padding-top: 0rem;
+  color: #efa04c;
+}
 
 /* メインバー編集 */
 
@@ -231,7 +239,7 @@ a {
 /* 無限スクロール */
 
 .scroll {
-	overflow:auto;
+  overflow:auto;
 }
 
 /* .scroll img {

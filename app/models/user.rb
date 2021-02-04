@@ -12,6 +12,10 @@ class User < ApplicationRecord
   has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id', dependent: :destroy
   has_many :followers, through: :reverse_of_relationships, source: :user
 
+  # ユーザーと通知モデルの紐付け
+  has_many :active_notifications, class_name: 'Notification', foreign_key: 'sender_id', dependent: :destroy
+  has_many :passive_notifications, class_name: 'Notification', foreign_key: 'sended_id', dependent: :destroy
+
   validates :profile, length: { maximum: 250 }
   validate :image
   mount_uploader :image, ImageUploader
@@ -35,4 +39,14 @@ class User < ApplicationRecord
     self.followings.include?(other_user)
   end
 
+  def create_notification_follow!(current_user)
+    temp = Notification.where(["sender_id = ? and sended_id = ? and action = ? ",current_user.id, id, 'follow'])
+    if temp.blank?
+      notification = current_user.active_notifications.new(
+        sended_id: id,
+        action: 'follow'
+      )
+      notification.save if notification.valid?
+    end
+  end
 end
