@@ -231,7 +231,7 @@ a {
 /* 無限スクロール */
 
 .scroll {
-	overflow:auto;
+  overflow:auto;
 }
 
 /* .scroll img {

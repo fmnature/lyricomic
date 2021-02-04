@@ -1,9 +1,11 @@
 <%= render "shared/header" %>
 <% notifications = @notifications.where.not(sender_id: current_user.id) %>
-<% if notifications.exists? %>
-  <% notifications.each do |notification| %>
-    <%= render "notifications", notification: notification%>
-  <% end %>
+<div class="contents">
+  <% if notifications.exists? %>
+    <% notifications.each do |notification| %>
+      <%= render "notifications", notification: notification%>
+    <% end %>
   <% else %>
-  <p>通知はありません</p>
-<% end %>
+    <p>通知はありません</p>
+  <% end %>
+</div>
