@@ -1,0 +1,42 @@
+<% sender = notification.sender %>
+<% sended = notification.sended %>
+
+<div class="contents">
+  <div class="content">
+
+    <span>
+      <%= link_to user_path(sender) do %>
+        <%= image_tag(sender.image.url, class: "icon-mini")%>
+        <strong><%= sender.nickname %></strong>
+      <% end %>
+      <%= "さんが" %>
+
+      <% case notification.action
+         when 'follow' %>
+        <%= "あなたをフォローしました" %>
+      <% when "like" %>
+        <%= link_to("あなたの投稿",lyric_path(notification.lyric_id), class: "font-weight") %>
+        <%= "にいいねしました" %>
+
+      <%# - when 'comment' then
+        - if notification.post.user_id == visited.id
+          = link_to "あなたの投稿", notification.post, style: "font-weight: bold;"
+        - else
+          span
+            = link_to post_path(notification.post) do
+              = image_tag avatar_url(notification.post.user).to_s, class: "icon_mini" 
+              strong
+                = notification.post.user.name + 'さんの投稿'
+        = "にコメントしました"
+        p.text-muted.mb-0
+          = Comment.find_by(id: notification.comment_id)&.comment %>
+      <% end %>
+    </span>
+
+    <div class="small text-muted text-right">
+        <%= time_ago_in_words(notification.created_at).upcase %>
+      <hr>
+    </div>
+
+  </div>
+</div>

@@ -17,6 +17,7 @@
         <% if user_signed_in? && current_user.id == @id %>
           <%= link_to '編集', edit_user_registration_path(@id), method: :get %>
           <%= link_to '削除', user_path(@id), method: :delete %>
+          <%= link_to '通知', notifications_path(@id), method: :get %>
         <% end %>
         <%= link_to "フォロー: #{@user.followings.count}", followings_user_path(@user.id) %>
         <%= link_to "フォロワー: #{@user.followers.count}", followers_user_path(@user.id) %>
