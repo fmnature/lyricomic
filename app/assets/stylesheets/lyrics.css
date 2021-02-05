@@ -157,7 +157,7 @@ a {
 .main-bar {
   background-color: rgb(15, 31, 15);
   width: calc(100vw - 300px);
-  height: 100vh; 
+  height: calc(100vh - 55px); 
 }
 
 .contents {
@@ -301,15 +301,24 @@ h3{
 /* サイドバー編集 */
 .left-side-bar {
   background-color:rgb(15, 31, 15);
+  color: white;
   width: 400px;
-  height: 100vh;
+  height: calc(100vh - 55px);
   border-right: 0.5px solid rgb(31, 48, 31);
 }
 
+.side-content {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 20px;
+}
+
+
 .right-side-bar {
   background-color: rgb(15, 31, 15);
+  color: white;
   width: 400px;
-  height: 100vh;
+  height: calc(100vh - 55px);
   border-left: 0.5px solid rgb(31, 48, 31);
 }
 
