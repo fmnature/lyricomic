@@ -121,7 +121,7 @@ a {
   padding: 20px;
 }
 
-/* コメント機能 */
+/************ コメント機能 *************/
 .comments {
   margin-top: 20px;
 }
@@ -175,19 +175,26 @@ a {
   position: relative;
   background-color: rgb(13, 26, 13);
   border-top: 0.5px solid rgb(31, 48, 31);
+}
+
+.hi-content {
   padding: 40px 20px;
 }
 
-/* .row-content{
+.low-content{
+  padding: 10px;
   display:flex;
-} */
+  justify-content: space-between;
+}
 
 .link-content {
   display: block;
-  /* position: absolute; いいねボタン(like-btn)との関係*/
-  position: relative;
-  width: 75%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
+  z-index: 1;
 }
 
 /* .like-btn{
@@ -199,23 +206,23 @@ a {
   transition-duration: 0.2s;
 }
 
-/* いいね機能 */
+/* ***** いいね機能 ****** */
 
 .like-btn {
   width: 25px;
-  height: 30px;
+  height: 25px;
   font-size: 25px;
   color: #808080; 
   margin-left: 20px;
   }
  
- .unlike-btn {
+.unlike-btn {
   width: 25px;
-  height: 30px;
+  height: 25px;
   font-size: 25px;
   color: #e54747;
   margin-left: 20px;
-  }
+}
 
 /* .com {
   margin: 0 auto;
@@ -225,7 +232,7 @@ a {
 } */
 
 .word {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .user-name {
@@ -233,10 +240,17 @@ a {
 }
 
 .right-content {
-  text-align: right;
+  z-index: 2;
+  display: inline-block;
 }
 
-/* 無限スクロール */
+.left-content {
+  z-index: 2;
+  margin: 10px auto 0 0;
+  display:inline-block;
+}
+
+/******** 無限スクロール *********/
 
 .scroll {
   overflow:auto;

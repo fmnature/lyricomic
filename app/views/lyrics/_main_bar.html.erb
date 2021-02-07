@@ -1,43 +1,35 @@
 <div class="scroll" data-max="20" data-lastnum="2">
   <div class="contents">
     <% @lyrics.each do |lyric| %>
-      <%# <% @likes.each do |like|  %>
-        <div class="content">
-          <%= link_to(lyric_path(lyric.id), method: :get, class: "link-content") do %>
+      <div class="content">
+        <%= link_to "", lyric_path(lyric.id), method: :get, class: "link-content" %>
+          <div class="hi-content">
             <%= image_tag lyric.image.variant(resize: '500x500'), class: 'lyric-image' if lyric.image.attached? %>
             <span class="word"><%= lyric.word %></span>
-
-
-            <div class="row-content">
-              
-              <div class="right-content">
-                <%= link_to image_tag(lyric.user.image.url, class: "icon-mini"), user_path(lyric.user.id)%>
-                <%= link_to lyric.user.nickname, user_path(lyric.user.id), method: :get %>
-                <%= link_to '一覧', lyric_path(lyric.id), method: :get %>
-              </div>
-
-              <div class="left-content">
-                <% if user_signed_in? %>
-                  <div class="like-content">
-                    <% if current_user.already_liked?(lyric) %>
-                      <%= link_to "/lyrics/#{lyric.id}/likes/#{lyric.likes.ids}", method: :delete do %>
-                        <i class="fa fa-heart unlike-btn" ></i>
-                      <% end %>
-                    <% else %>
-                      <%= link_to lyric_likes_path(lyric), method: :post do %>
-                        <i class="fa fa-heart like-btn" ></i>
-                      <% end %>                    
+          </div>
+          <div class="low-content">           
+            <div class="left-content">
+              <% if user_signed_in? %>
+                <div class="like-content">
+                  <% if current_user.already_liked?(lyric) %>
+                    <%= link_to "/lyrics/#{lyric.id}/likes/#{lyric.likes.ids}", method: :delete do %>
+                      <i class="fa fa-heart unlike-btn" ></i>
                     <% end %>
-                    <%= lyric.likes.count %>
-                  </div>
-                <% end %>
-              </div>
-
+                  <% else %>
+                    <%= link_to lyric_likes_path(lyric), method: :post do %>
+                      <i class="fa fa-heart like-btn" ></i>
+                    <% end %>                    
+                  <% end %>
+                  <%= lyric.likes.count %>
+                </div>
+              <% end %>
             </div>
-
-          <% end %>
-        </div>
-      <%# <% end  %>
+            <div class="right-content">
+              <%= link_to lyric.user.nickname, user_path(lyric.user.id), method: :get %>
+              <%= link_to image_tag(lyric.user.image.url, class: "icon-mini"), user_path(lyric.user.id)%>
+            </div>
+          </div>
+      </div>
     <% end %>
   </div>
 </div>
