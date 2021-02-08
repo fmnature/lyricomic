@@ -5,6 +5,8 @@ class Lyric < ApplicationRecord
   has_many :comments
   has_many :likes
   has_many :notifications, dependent: :destroy
+  has_many :taggings
+  has_many :tags, through: :taggings
 
   has_one_attached :image
 

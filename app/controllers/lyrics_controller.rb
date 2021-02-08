@@ -9,12 +9,13 @@ class LyricsController < ApplicationController
   end
 
   def new
-    @lyric = Lyric.new
+    @lyric = LyricsTag.new
   end
 
   def create
-    @lyric = Lyric.new(lyric_params)
-    if @lyric.save
+    @lyric = LyricsTag.new(lyric_params)
+    if @lyric.valid?
+      @lyric.save
       redirect_to root_path
     else
       render :new
@@ -47,12 +48,15 @@ class LyricsController < ApplicationController
   end
 
   def search
-    @lyrics = Lyric.search(params[:keyword])
+    return nil if params[:keyword] == ""
+    # @lyrics = Lyric.search(params[:keyword])
+    tag = Tag.where(['name LIKE ?', "%#{params[:keyword]}%"] )
+    render json:{ keyword: tag }
   end
 
   private
   def lyric_params
-    params.require(:lyric).permit(:word, :text, :image).merge(user_id: current_user.id)
+    params.require(:lyrics_tag).permit(:word, :text, :image, :name).merge(user_id: current_user.id)
   end
 
   def set_lyric
