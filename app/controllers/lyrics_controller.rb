@@ -48,7 +48,10 @@ class LyricsController < ApplicationController
   end
 
   def search
-    @lyrics = Lyric.search(params[:keyword])
+    return nil if params[:keyword] == ""
+    # @lyrics = Lyric.search(params[:keyword])
+    tag = Tag.where(['name LIKE ?', "%#{params[:keyword]}%"] )
+    render json:{ keyword: tag }
   end
 
   private
