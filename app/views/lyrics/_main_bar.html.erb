@@ -11,16 +11,7 @@
             <div class="left-content">
               <% if user_signed_in? %>
                 <div class="like-content">
-                  <% if current_user.already_liked?(lyric) %>
-                    <%= link_to "/lyrics/#{lyric.id}/likes/#{lyric.likes.ids}", method: :delete do %>
-                      <i class="fa fa-heart unlike-btn" ></i>
-                    <% end %>
-                  <% else %>
-                    <%= link_to lyric_likes_path(lyric), method: :post do %>
-                      <i class="fa fa-heart like-btn" ></i>
-                    <% end %>                    
-                  <% end %>
-                  <%= lyric.likes.count %>
+                  <%= render partial: 'likes/like', locals: { lyric: lyric } %>
                 </div>
               <% end %>
             </div>
