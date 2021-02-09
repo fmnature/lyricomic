@@ -1,0 +1,4 @@
+<%= form_with(model: [lyric, comment]) do |form| %>
+  <%= form.text_area :content, placeholder: "コメントする", rows: "2", id:"comment-text-field" %>
+  <%= form.submit "送信" %>
+<% end %>

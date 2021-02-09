@@ -16,31 +16,20 @@
         <div class="more">
           <%= link_to '編集', edit_lyric_path(@lyric.id), method: :get %>
           <%= link_to '削除', lyric_path(@lyric.id), method: :delete %>
-      
+        </div>
       <% end %>
     
 
         <% if user_signed_in? %>
-          <%= form_with(model: [@lyric, @comment], local: true) do |form| %>
-            <%= form.text_area :content, placeholder: "コメントする", rows: "2" %>
-            <%= form.submit "送信" %>
-          <% end %>
+          <%= render partial: 'comments/form', locals: { comment: @comment, lyric: @lyric } %>
         <% else %>
-          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+          <strong><p>ログインをしてください。</p></strong>
         <% end %>
+
         <div class="comments">
-          <% @comments.each do |comment| %>
-            <div class="comment">
-              <p>
-                <%= image_tag(comment.user.image.url, class: "icon-mini") %>
-                <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
-                <%= comment.content %>
-              </p>
-              <% if user_signed_in? && current_user.id == comment.user_id %>
-                <%= link_to '削除', lyric_comment_path(comment.id), method: :delete %>
-              <% end %>
-            </div>
-          <% end %>
+          <div id="comments_area">
+            <%= render partial: 'comments/index', locals: { comments: @comments } %>
+          </div>
         </div>
 
     </div>

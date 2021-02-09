@@ -43,7 +43,7 @@ class LyricsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @lyric.comments.includes(:user)
+    @comments = @lyric.comments.includes(:user).order(created_at: :desc)
     @like = Like.new
   end
 
