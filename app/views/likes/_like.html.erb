@@ -1,9 +1,9 @@
 <% if current_user.already_liked?(lyric) %>
-  <%= link_to "/lyrics/#{lyric.id}/likes/#{lyric.likes.ids}", method: :delete do %>
+  <%= link_to "/lyrics/#{lyric.id}/likes/#{lyric.likes.ids}", method: :delete, remote: true do %>
     <i class="fa fa-heart unlike-btn" ></i>
   <% end %>
 <% else %>
-  <%= link_to lyric_likes_path(lyric), method: :post do %>
+  <%= link_to lyric_likes_path(lyric), method: :post, remote: true do %>
     <i class="fa fa-heart like-btn" ></i>
   <% end %>                    
 <% end %>

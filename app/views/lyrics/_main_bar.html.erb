@@ -10,7 +10,7 @@
           <div class="low-content">           
             <div class="left-content">
               <% if user_signed_in? %>
-                <div class="like-content">
+                <div id="likes_buttons_<%= lyric.id %>">
                   <%= render partial: 'likes/like', locals: { lyric: lyric } %>
                 </div>
               <% end %>
