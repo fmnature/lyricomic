@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  before_action :set_lyric
+  before_action :set_lyric, only: [:create, :destroy] 
 
   def create
     @like = current_user.likes.create(lyric_id: params[:lyric_id])
