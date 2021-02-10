@@ -1,7 +1,18 @@
 <%= render "shared/header" %>
-<%= form_with(model: user, local: true) do |form| %>
-  <%= form.file_field :image, class: 'hidden' %>
-  <%= form.text_field :nick_name, placeholder: "名前" %>
-  <%= form.text_area :profile, placeholder: "プロフィール", rows: "3" %>
-  <%= form.submit "送信" %>
-<% end %>
+<div class="contents tem">
+  <div class="content">
+  
+    <%= form_with(model: @user, local: true) do |form| %>
+      <div id="image-list">
+        <img src=<%= @user.image %> class = "icon-image">
+      </div>
+      <div class="field">
+        <%= form.label "画像" %><br />
+        <%= form.file_field :image, class: 'hidden' %>
+      </div>
+      <%= form.text_field :nick_name, placeholder: "名前" %>
+      <%= form.text_area :profile, placeholder: "プロフィール", rows: "3" %>
+      <%= form.submit "送信" %>
+    <% end %>
+  </div>
+</div>

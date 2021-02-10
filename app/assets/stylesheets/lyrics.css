@@ -270,6 +270,7 @@ a {
 
 .scroll {
   overflow:auto;
+  background-color: rgb(13, 32, 13);
 }
 
 /* .scroll img {
