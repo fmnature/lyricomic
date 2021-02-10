@@ -1,6 +1,4 @@
 class Lyric < ApplicationRecord
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :genre
   belongs_to :user
 
   has_many :comments
@@ -12,7 +10,6 @@ class Lyric < ApplicationRecord
   has_one_attached :image
 
   validates :word, presence: true, unless: :was_attached?
-  validates :genre_id, numericality: { other_than: 1 } 
 
 
   def was_attached?
