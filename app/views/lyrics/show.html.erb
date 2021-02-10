@@ -8,6 +8,8 @@
       </span>
       <p><%= @lyric.text %></p>
 
+      <%= @lyric.genre.name %>
+
       <div id="likes_buttons_<%= @lyric.id %>">
         <%= render partial: 'likes/like', locals: { lyric: @lyric } %>
       </div>
