@@ -38,6 +38,11 @@
         <%= f.file_field :image, class: 'hidden' %>
       </div>
 
+      <div class="field">
+        <%= f.label "カテゴリー" %><br />
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"genre-select"}) %>
+      </div>
+
       <div class="actions">
         <%= f.submit "登録" %>
       </div>
