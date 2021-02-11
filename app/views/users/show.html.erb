@@ -8,6 +8,7 @@
       <img src=<%= @image %> class = "icon-image">
       <h1><%= @nickname %></h1>
       <p><%= @profile %></p>
+      <%= @user.category.name %>
 
       <div class="follow">
         <%= render "relationships/follow_button", user: @user %>

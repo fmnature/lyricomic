@@ -2,6 +2,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :category
+
   has_many :lyrics
   has_many :comments
   has_many :likes
@@ -19,6 +22,8 @@ class User < ApplicationRecord
   validates :profile, length: { maximum: 250 }
   validate :image
   mount_uploader :image, ImageUploader
+
+  validates :category_id, numericality: { other_than: 1 } 
 
   def already_liked?(lyric)
     self.likes.exists?(lyric_id: lyric.id)
