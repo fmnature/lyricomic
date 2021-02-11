@@ -3,7 +3,7 @@ class LyricsController < ApplicationController
   before_action :move_to_index, except: [:index, :show, :search]
 
   def index
-    @lyrics = Lyric.all.includes(:user).order("created_at DESC")
+    @lyrics = Lyric.all.includes(:user).order("created_at DESC").page(params[:page]).without_count.per(10)
     # @like = current_user.likes.find_by(user_id: current_user.id)  
     # @likes = Like.all
   end
