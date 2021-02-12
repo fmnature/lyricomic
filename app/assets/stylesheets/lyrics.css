@@ -260,6 +260,9 @@ a {
   display: inline-block;
 }
 
+a.user-name {
+  height: 100%;
+}
 .left-content {
   z-index: 2;
   margin: 10px auto 0 0;
