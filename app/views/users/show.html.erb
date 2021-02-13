@@ -10,6 +10,7 @@
       <p><%= @profile %></p>
       <%= @user.category.name %>
       <%= render "relationships/follow_button", user: @user %>
+      <%= @user.profile %>
       <div class="conteaner row">
         <% if user_signed_in? && current_user.id == @id %>
           <%= link_to '編集', edit_user_registration_path(@id), method: :get %>
