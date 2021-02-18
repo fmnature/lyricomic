@@ -138,9 +138,6 @@ a {
 }
 
 /************ コメント機能 *************/
-.comments {
-  margin-top: 20px;
-}
 
 .comment {
   text-align: left;
@@ -201,6 +198,7 @@ a {
   padding: 10px;
   display:flex;
   justify-content: space-between;
+
 }
 
 .link-content {
@@ -228,8 +226,8 @@ a {
   width: 25px;
   height: 25px;
   font-size: 25px;
-  color: #808080; 
   margin-left: 20px;
+  color:rgb(146, 145, 145);
   }
  
 .unlike-btn {
@@ -332,11 +330,13 @@ h3{
 /* サイドバー編集 */
 .left-side-bar {
   background-color:rgb(15, 31, 15);
-  color: white;
+  color:rgb(146, 145, 145);
   width: 400px;
   height: calc(100vh - 55px);
   border-right: 0.5px solid rgb(31, 48, 31);
 }
+
+
 
 .side-content {
   margin-top: 30px;
@@ -347,7 +347,7 @@ h3{
 
 .right-side-bar {
   background-color: rgb(15, 31, 15);
-  color: white;
+  color:rgb(146, 145, 145);
   width: 400px;
   height: calc(100vh - 55px);
   border-left: 0.5px solid rgb(31, 48, 31);

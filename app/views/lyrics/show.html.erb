@@ -20,19 +20,18 @@
           </div>
         <% end %>
       </div>
-
-        <% if user_signed_in? %>
-          <%= render partial: 'comments/form', locals: { comment: @comment, lyric: @lyric } %>
-        <% else %>
-          <strong><p>ログインをしてください。</p></strong>
-        <% end %>
-
-        <div class="comments">
-          <div id="comments_area">
-            <%= render partial: 'comments/index', locals: { comments: @comments } %>
-          </div>
-        </div>
-
     </div>
+    <div class="content">
+      <% if user_signed_in? %>
+        <%= render partial: 'comments/form', locals: { comment: @comment, lyric: @lyric } %>
+      <% else %>
+        <strong><p>ログインをしてください。</p></strong>
+      <% end %>
+    </div>
+      <div class="comments">
+        <div id="comments_area">
+          <%= render partial: 'comments/index', locals: { comments: @comments } %>
+        </div>
+      </div>
   </div>
 </div>
