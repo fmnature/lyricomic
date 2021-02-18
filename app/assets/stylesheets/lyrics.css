@@ -134,8 +134,11 @@ a:hover{
   object-fit: cover;
 }
 
+.ri {
+  margin-right: 15px;
+}
+
 .icon-mini {
-  margin-right: 10px;
   width: 40px;
   height: 40px;
   border-radius: 100px;
@@ -158,13 +161,24 @@ a:hover{
 
 .comment {
   display: flex;
-  text-align: center;
-  justify-content: left;
+  justify-content: space-between;
   border-top: 0.5px solid rgb(31, 48, 31);
   padding: 50px 20px;
   background-color:  rgb(13, 26, 13);
 }
 
+.comment-left {
+  display: flex;
+}
+
+.comment-name {
+  margin-top: 15px;
+}
+
+.comment-word {
+  margin-top: 10px;
+  font-size: 25px;
+}
 
 .comment:hover {
   background-color: rgb(13, 32, 13);
@@ -209,11 +223,11 @@ a:hover{
   position: relative;
   background-color: rgb(13, 26, 13);
   border-top: 0.5px solid rgb(31, 48, 31);
-  padding: 0 20px;
+  padding: 0 38px;
 }
 
 .hi-content {
-  padding: 50px 0;
+  padding: 80px 0;
 }
 
 .low-content{
@@ -274,10 +288,10 @@ a:hover{
 } */
 
 .word {
-  font-size: 20px;
-  width: 70%;
+  font-size: 24px;
+  width: 100%;
   word-break: keep-all;
-  line-height: 30px;
+  line-height: 59px;
   text-align: center;
 }
 
@@ -299,7 +313,7 @@ a:hover{
 
 .left-content {
   padding-top: 8px;
-  padding-left: 1px;
+  padding-left: 13px;
   z-index: 2;
   display:inline-block;
 }
