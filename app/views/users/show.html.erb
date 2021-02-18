@@ -3,51 +3,42 @@
     <div class="user-content">
 
       <div class="hi-user-content">
+
         <div class="left-user-content">
           <img src=<%= @image %> class = "icon-image">
+          <% if user_signed_in? && current_user.id == @id %>
+            <div class="user-menu-content">
+              <%= link_to(content_tag(:i, nil, class: 'fas fa-user-edit'),edit_user_registration_path(@id), method: :get) %>
+              <%= render "notifications/circle" %>
+            </div>
+          <% end %>
           <h1><%= @nickname %></h1>
+          <div class="follow-content">
+            <%= link_to "フォロー: #{@user.followings.count}", followings_user_path(@user.id) %>
+            <%= link_to "フォロワー: #{@user.followers.count}", followers_user_path(@user.id) %>
+         </div>
         </div>
+
         <div class="right-user-content">
+          <div class="follow">
+            <%= render "relationships/follow_button", user: @user %>
+          </div>
+
         </div>
+
       </div>
 
       <div class="low-user-content">
+        <%= @user.category.name %>
+      </div>
+
+      <div class="user-profile-content">
         <p><%= @profile %></p>
       </div>
-
-
-
-
-
-
-      <%= @user.category.name %>
-
-      <div class="follow">
-        <%= render "relationships/follow_button", user: @user %>
-      </div>
-
-
-      
-        <% if user_signed_in? && current_user.id == @id %>
-          <div class="user-menu-content">
-            <%= link_to '編集', edit_user_registration_path(@id), method: :get %>
-            <%= link_to(content_tag(:i, nil, class: 'fas fa-user-edit'),edit_user_registration_path(@id), method: :get) %>
-            <%= link_to '通知', notifications_path(@id), method: :get %>
-            <%= render "notifications/circle" %>
-          </div>
-        <% end %>
-
-        <div class="follow-content">
-          <%= link_to "フォロー: #{@user.followings.count}", followings_user_path(@user.id) %>
-          <%= link_to "フォロワー: #{@user.followers.count}", followers_user_path(@user.id) %>
-        </div>
-
     </div>
 
-
-
     <div class="user-index">
-      <p><%= @nickname %>の名言</p>
+      <p>リリック</p>
     </div>
     <% @lyrics.each do |lyric| %>
       <%= render partial: 'lyrics/content', locals: { lyric: lyric } %>

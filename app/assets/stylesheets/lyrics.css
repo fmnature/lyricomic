@@ -248,11 +248,16 @@ a:hover{
   transition-duration: 0.2s;
 }
 
+.content-image {
+  display: block;
+  text-align: center;
+}
+
 .lyric-image{
   margin-bottom: 20px;
   border-radius: 10px;
-  width: 500px;
-  height: 320px;
+  width: 700px;
+  height: 400px;
   object-fit: cover; 
 }
 
@@ -335,11 +340,10 @@ h3{
 }
 
 .container{
-  margin: 0 auto;
-  text-align: center;
-  width: 700px;
-  height: 100%;
-  border: 0.5px solid rgb(31, 48, 31);
+  position: relative;
+  background-color: rgb(13, 26, 13);
+  border-top: 0.5px solid rgb(31, 48, 31);
+  padding: 0 38px;
 }
 
 .follow form input,
@@ -358,7 +362,7 @@ h3{
 .content form input[type="submit"],
 .container form input[type="submit"] {
   width: 180px;
-  background-color: #b44f07;
+  background-color: #9c4506;
   border-radius: 20px;
   color: #fff;
   border: 0;
@@ -368,13 +372,24 @@ h3{
 .follow form input[type="submit"]:hover,
 .content form input[type="submit"]:hover,
 .container form input[type="submit"]:hover {
-  background-color: #f56500;
+  background-color: #d85d05;
+  transition-duration: 0.2s;
 }
 
 
 /********* ユーザープロフィール **********/
 
+.user-content {
+  padding: 40px;
+}
 
+.hi-user-content {
+  display: flex;
+}
+
+.user-index {
+  margin-left: 40px;
+}
 
 /* フォロー機能 */
 
