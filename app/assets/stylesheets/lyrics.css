@@ -149,10 +149,6 @@ a:hover{
   display:flex;
 }
 
-.user-profile {
-  padding: 20px;
-}
-
 /************ コメント機能 *************/
 
 .comment-form {
@@ -307,7 +303,7 @@ a:hover{
 
 .icon-name{
   margin-top: 9px;
-  margin-right: 8px;
+  margin-right: 15px;
   display: inline-block;
 }
 
@@ -374,6 +370,11 @@ h3{
 .container form input[type="submit"]:hover {
   background-color: #f56500;
 }
+
+
+/********* ユーザープロフィール **********/
+
+
 
 /* フォロー機能 */
 
