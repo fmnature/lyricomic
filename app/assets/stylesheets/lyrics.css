@@ -41,7 +41,7 @@ a:hover{
 }
 
 .field {
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 .create-lyric {
@@ -132,13 +132,6 @@ a:hover{
 
 .wrapper {
   display: flex;
-}
-
-.icon-image {
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
-  object-fit: cover;
 }
 
 .ri {
@@ -388,22 +381,58 @@ h3{
 /********* ユーザープロフィール **********/
 
 .user-content {
-  padding: 40px;
+  padding: 40px 70px 10px 70px;
   border-bottom: 0.5px solid rgb(31, 48, 31);
 }
 
+.user-menu-content{
+  text-align: right;
+  margin-right: 10px;
+}
+
 .hi-user-content {
+  padding-right: 40px;
+  display: flex;
+  justify-content: center;
+  height: 230px;
+}
+
+.right-user-content{
+  margin-top: 35px;
+  margin-left: 70px;
+}
+
+.category-name {
+  margin-left: 30px;
+  margin-top: 15px;
+  font-size: 25px;
+}
+
+.icon-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  object-fit: cover;
+  margin-left: 15px;
+}
+
+.user-name-show {
   display: flex;
 }
 
+.user-nickname {
+  font-size: 32px;
+}
+
 .user-index {
-  margin-left: 40px;
+  margin-top: 20px;
 }
 
 /* フォロー機能 */
 
 .follow {
-  padding:30px 0;
+  padding-top:10px;
+  padding-left: 20px;
 }
 
 /* サイドバー編集 */
