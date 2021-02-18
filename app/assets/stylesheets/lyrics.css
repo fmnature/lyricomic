@@ -32,7 +32,12 @@ ul,li {
 
 a {
   text-decoration: none;
-  color: #eeeeee;
+  color:rgb(233, 233, 233);
+}
+
+a:hover{
+  color: white;
+  transition-duration: 0.2s;
 }
 
 
@@ -57,6 +62,7 @@ a {
 
 .post:hover {
   background: #f56500;
+  transition-duration: 0.2s;
 }
 
 .header-main{
@@ -71,7 +77,8 @@ a {
 
 .search-form input,
 .search-form form{
-  margin: 10px 0;
+  margin: 5px 0;
+  height: 30px;
 }
 
 .search-input{
@@ -80,24 +87,30 @@ a {
   background-color: rgb(10, 20, 10);
   padding-left: 10px;
   width: 600px;
+  
 }
 
 .search-btn{
   background-color: rgb(31, 48, 31);
-  color: #eeeeee;
-}
-
-.search-form input[type="submit"]{
-  padding: 4px 15px;
+  color:rgb(131, 130, 130);
   border: none;
+  padding: 4px 15px;
+  margin: 5px 0;
+  height: 30px;
 }
 
-.search-form input[type="submit"]:hover{
+
+.search-btn:hover{
   background-color: rgb(46, 73, 46);
+  transition-duration: 0.2s;
 }
 
 .header-left {
   width: 260px;
+}
+
+.lyric-icon{
+ height: 43px;
 }
 
 .header-right {
@@ -175,7 +188,7 @@ a {
 
 .contents {
   font-size: 20px;
-  color: white;
+  color: rgb(235, 235, 235);
   background-color: rgb(13, 26, 13);
   height: calc(100vh - 55px);
   width: 100%;
@@ -231,15 +244,19 @@ a {
   height: 25px;
   font-size: 25px;
   margin-left: 20px;
-  color:rgb(146, 145, 145);
-  }
- 
+  color:rgb(131, 130, 130);
+}
+
 .unlike-btn {
   width: 25px;
   height: 25px;
   font-size: 25px;
   color: #e54747;
   margin-left: 20px;
+}
+
+.left-content span{
+  color:rgb(146, 145, 145);
 }
 
 /* .com {
@@ -252,6 +269,9 @@ a {
 .word {
   font-size: 20px;
   width: 70%;
+  word-break: keep-all;
+  line-height: 30px;
+  text-align: center;
 }
 
 .user-name {
@@ -262,11 +282,12 @@ a {
   z-index: 2;
   display: flex;
   height: 100%;
+  margin-right: 10px;
 }
 
-
 .icon-name{
-  top:0px;
+  margin-top: 9px;
+  margin-right: 8px;
   display: inline-block;
 }
 
