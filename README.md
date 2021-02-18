@@ -1,24 +1,21 @@
-# README
+# Lyricomic
+lyricomicは詩を共有するアプリです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# URL
 
-* Ruby version
+# 制作の背景
+私は詩が好きで、今まで助けられてきました。
 
-* System dependencies
+# 機能紹介
 
-* Configuration
+# 工夫した点
 
-* Database creation
+# 今後やりたい実装
 
-* Database initialization
+# 機能一覧
 
-* How to run the test suite
+# 使用技術
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# ER図
+[![Image from Gyazo](https://i.gyazo.com/7c51a6cd5a8febd21141e3d4fc5c43b5.png)](https://gyazo.com/7c51a6cd5a8febd21141e3d4fc5c43b5)
