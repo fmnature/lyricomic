@@ -3,35 +3,35 @@
   <div class="contents tem">
 
     <div class="content">
-      <span class="show-word">
-        <%= @lyric.word %>
-      </span>
-      <p><%= @lyric.text %></p>
+      <div class="comment">
+        <span class="show-word">
+          <%= @lyric.word %>
+        </span>
+        <p><%= @lyric.text %></p>
 
-      <div id="likes_buttons_<%= @lyric.id %>">
-        <%= render partial: 'likes/like', locals: { lyric: @lyric } %>
-      </div>
-
-      <% if user_signed_in? && current_user.id == @lyric.user_id %>
-        <div class="more">
-          <%= link_to '編集', edit_lyric_path(@lyric.id), method: :get %>
-          <%= link_to '削除', lyric_path(@lyric.id), method: :delete %>
+        <div id="likes_buttons_<%= @lyric.id %>">
+          <%= render partial: 'likes/like', locals: { lyric: @lyric } %>
         </div>
-      <% end %>
-    
 
-        <% if user_signed_in? %>
-          <%= render partial: 'comments/form', locals: { comment: @comment, lyric: @lyric } %>
-        <% else %>
-          <strong><p>ログインをしてください。</p></strong>
-        <% end %>
-
-        <div class="comments">
-          <div id="comments_area">
-            <%= render partial: 'comments/index', locals: { comments: @comments } %>
+        <% if user_signed_in? && current_user.id == @lyric.user_id %>
+          <div class="more">
+            <%= link_to '編集', edit_lyric_path(@lyric.id), method: :get %>
+            <%= link_to '削除', lyric_path(@lyric.id), method: :delete %>
           </div>
-        </div>
-
+        <% end %>
+      </div>
     </div>
+    <div class="content">
+      <% if user_signed_in? %>
+        <%= render partial: 'comments/form', locals: { comment: @comment, lyric: @lyric } %>
+      <% else %>
+        <strong><p>ログインをしてください。</p></strong>
+      <% end %>
+    </div>
+      <div class="comments">
+        <div id="comments_area">
+          <%= render partial: 'comments/index', locals: { comments: @comments } %>
+        </div>
+      </div>
   </div>
 </div>

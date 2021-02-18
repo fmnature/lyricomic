@@ -20,6 +20,7 @@ class User < ApplicationRecord
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'sended_id', dependent: :destroy
 
   validates :profile, length: { maximum: 250 }
+  validates :nickname, presence: true
   validate :image
   mount_uploader :image, ImageUploader
 
