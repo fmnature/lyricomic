@@ -1,9 +1,23 @@
 <%= form_with model: lyric, url: lyrics_path, local: true do |f| %>
-  <%= f.text_field :word, placeholder: "詩" , rows: "3" %>
-  <%= f.text_area :text, placeholder: "概要欄", rows: "2" %>
-  <%= f.file_field :image, class: 'hidden' %>
-  <%= f.text_field :name, placeholder: "タグ", class:"input-tag" %>
+  <div class="field">
+    <%= f.label "詩" %><br />
+    <%= f.text_field :word, placeholder: "何を感じていますか？" , rows: "3" %>
+  </div>
+  <div class="field">
+    <%= f.label "概要欄（任意）" %><br />
+    <%= f.text_area :text, placeholder: "詳細を記入してください", rows: "2" %>
+  </div>
+  <div class="field">
+    <%= f.label "画像（任意）" %><br />
+    <%= f.file_field :image, class: 'hidden' %>
+  </div>
+  <div class="field">
+    <%= f.label "タグ（任意）" %><br />
+    <%= f.text_field :name, placeholder: "タグを入力してください", class:"input-tag" %>
+  </div>
   <div id="search-result">
   </div>
-  <%= f.submit "送信" %>
+  <div class="field">
+    <%= f.submit "送信" %>
+  </div>
 <% end %>
