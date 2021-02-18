@@ -1,3 +1,4 @@
+<div class="scroll" data-max="20" data-lastnum="2">
 <div class="contents tem">
   <div class="content">
     <h2><%= @user.nickname %>さんのプロフィール</h2>
@@ -52,8 +53,9 @@
 
     <h3>アカウントを削除しますか？</h3>
 
-    <p>Unhappy? <%= button_to "アカウントを削除", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+    <%= button_to "アカウントを削除", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
 
     <%= link_to "戻る", :back %>
   </div>
+</div>
 </div>

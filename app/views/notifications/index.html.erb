@@ -1,4 +1,3 @@
-<%= render "shared/header" %>
 <% notifications = @notifications.where.not(sender_id: current_user.id) %>
 <div class="contents">
   <% if notifications.exists? %>
