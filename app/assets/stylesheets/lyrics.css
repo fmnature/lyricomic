@@ -152,12 +152,19 @@ a:hover{
 
 /************ コメント機能 *************/
 
+.comment-form {
+  padding: 12px 0 15px 0;
+}
+
 .comment {
-  text-align: left;
+  display: flex;
+  text-align: center;
+  justify-content: left;
   border-top: 0.5px solid rgb(31, 48, 31);
-  padding: 60px 25px;
+  padding: 50px 20px;
   background-color:  rgb(13, 26, 13);
 }
+
 
 .comment:hover {
   background-color: rgb(13, 32, 13);
@@ -202,16 +209,18 @@ a:hover{
   position: relative;
   background-color: rgb(13, 26, 13);
   border-top: 0.5px solid rgb(31, 48, 31);
+  padding: 0 20px;
 }
 
 .hi-content {
-  padding: 40px 20px;
+  padding: 50px 0;
 }
 
 .low-content{
   display:flex;
   justify-content: space-between;
   height: 50px;
+  padding-bottom: 52px;
 }
 
 .link-content {
@@ -230,7 +239,7 @@ a:hover{
 }
 
 .lyric-image{
-  margin-top: 30px;
+  margin-bottom: 20px;
   border-radius: 10px;
   width: 500px;
   height: 320px;
@@ -243,7 +252,6 @@ a:hover{
   width: 25px;
   height: 25px;
   font-size: 25px;
-  margin-left: 20px;
   color:rgb(131, 130, 130);
 }
 
@@ -252,7 +260,6 @@ a:hover{
   height: 25px;
   font-size: 25px;
   color: #e54747;
-  margin-left: 20px;
 }
 
 .left-content span{
@@ -282,7 +289,6 @@ a:hover{
   z-index: 2;
   display: flex;
   height: 100%;
-  margin-right: 10px;
 }
 
 .icon-name{
@@ -331,7 +337,7 @@ h3{
 .contents form textarea {
   color: #fff;
   width: 100%;
-  margin: 10px 0;
+  margin-top: 8px;
   background-color: rgb(15, 31, 15);
   padding: 10px;
   border: 0.5px solid rgb(31, 48, 31);

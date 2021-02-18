@@ -1,2 +1,14 @@
-<%= render "main_bar" %>
+<div class="scroll" data-max="20" data-lastnum="2">
+  <div class="contents">
+    <div class="jscroll">
+      <% @lyrics.each do |lyric| %>
+        <%= render partial: 'content', locals: { lyric: lyric } %>
+      <% end %>
+      <div class="skill-list">
+        <%= link_to_prev_page @lyrics, '前のページ', class: "prev" %>
+        <%= link_to_next_page @lyrics, '次のページ', class: "next" %>
+      </div>
+    </div>
+  </div>
+</div>
 

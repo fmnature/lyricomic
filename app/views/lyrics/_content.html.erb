@@ -1,0 +1,24 @@
+<div class="content">
+  <%= link_to "", lyric_path(lyric.id), method: :get, class: "link-content" %>
+  <div class="hi-content">
+    <span class="word"><%= lyric.word %></span>
+  </div>
+  <div class="low-content">
+    <div class="left-content">
+      <% if user_signed_in? %>
+        <div id="likes_buttons_<%= lyric.id %>">
+          <%= render partial: 'likes/like', locals: { lyric: lyric } %>
+        </div>
+      <% end %>
+    </div>
+    <div class="right-content">
+      <div class="icon-name">
+        <%= link_to lyric.user.nickname, user_path(lyric.user.id), method: :get %>
+      </div>
+      <div class="icon">
+        <%= link_to image_tag(lyric.user.image.url, class: "icon-mini"), user_path(lyric.user.id)%>
+      </div>
+    </div>
+  </div>
+</div>
+
