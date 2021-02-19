@@ -1,22 +1,28 @@
 <header class="header">
   <div class="header-left">
-    <h1 class="app_name"><a href="/">Lyricomic</a></h1>
+    <%= link_to image_tag("logo.png", class:"lyric-icon"), "/" %>
     </div>
     <div class="header-main">
     <%= form_with(url: search_lyrics_path, local: true, method: :get, class: "search-form") do |form| %>
       <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-      <%= form.submit "検索", class: "search-btn" %>
+      <%= form.button :type => "submit", class: "search-btn" do %>
+        <i class='fa fa-search'></i>
+      <% end %>
     <% end %>
     </div>
     <div class="header-right">
       <% if user_signed_in? %>
         <div class="user-right">
-          <%= link_to image_tag(current_user.image.url, class: "icon-mini"), user_path(current_user.id)%>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post" %>
-          <%= link_to "投稿", new_lyric_path, class: "create-lyric"%>
+          <div class="icon">
+            <%= link_to image_tag(current_user.image.url, class: "ri icon-mini"), user_path(current_user.id)%>
+          </div>
+          <div class="user-action">
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post" %>
+            <%= link_to "投稿", new_lyric_path, class: "create-lyric"%>
+          </div>
         </div>
       <% else %>
-        <div class="grid-6">
+        <div class="user-action grid-6">
           <%= link_to "ログイン", new_user_session_path, class: "post" %>
           <%= link_to "新規登録", new_user_registration_path, class: "post" %>
         </div>

@@ -1,9 +1,8 @@
-<%= render "shared/header" %>
 <div class="scroll" data-max="20" data-lastnum="2">
   <div class="contents">
-  <h1>フォロー</h1>
+  <h1>フォロー一覧</h1>
     <% @users.each do |user| %>
-      <div class="content">
+      <div class="follow-container">
         <%= link_to image_tag(user.image.url, class: "icon-mini"), user_path(user.id)%>
         <%= link_to(user.nickname, user_path(@user.id)) %>
       </div>

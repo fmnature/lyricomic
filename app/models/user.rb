@@ -5,15 +5,15 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
 
-  has_many :lyrics
-  has_many :comments
-  has_many :likes
+  has_many :lyrics, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   has_many :relationships, foreign_key: "user_id", dependent: :destroy
-  has_many :followings, through: :relationships, source: :follow
+  has_many :followings, through: :relationships, source: :follow, dependent: :destroy
 
   has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id', dependent: :destroy
-  has_many :followers, through: :reverse_of_relationships, source: :user
+  has_many :followers, through: :reverse_of_relationships, source: :user, dependent: :destroy
 
   # ユーザーと通知モデルの紐付け
   has_many :active_notifications, class_name: 'Notification', foreign_key: 'sender_id', dependent: :destroy

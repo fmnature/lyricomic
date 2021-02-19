@@ -1,37 +1,48 @@
-<%= render "shared/header" %>
 <div class="scroll" data-max="20" data-lastnum="2">
-  <div class="contents tem">
-
+  <div class="contents">
     <div class="content">
-      <div class="comment">
-        <span class="show-word">
+      <div class="hi-content">
+        <div class="word">
           <%= @lyric.word %>
-        </span>
+        </div>
+      </div>
+      <% if @lyric.text.present?%>
         <p><%= @lyric.text %></p>
-
-        <div id="likes_buttons_<%= @lyric.id %>">
-          <%= render partial: 'likes/like', locals: { lyric: @lyric } %>
-        </div>
-
-        <% if user_signed_in? && current_user.id == @lyric.user_id %>
-          <div class="more">
-            <%= link_to '編集', edit_lyric_path(@lyric.id), method: :get %>
-            <%= link_to '削除', lyric_path(@lyric.id), method: :delete %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="content">
-      <% if user_signed_in? %>
-        <%= render partial: 'comments/form', locals: { comment: @comment, lyric: @lyric } %>
-      <% else %>
-        <strong><p>ログインをしてください。</p></strong>
       <% end %>
-    </div>
-      <div class="comments">
-        <div id="comments_area">
-          <%= render partial: 'comments/index', locals: { comments: @comments } %>
+      <div class="content-image">
+        <%= image_tag @lyric.image.variant(resize: '500x500'), class: 'lyric-image' if @lyric.image.attached? %>
+      </div>
+
+      <div class="low-content">
+        <div class="left-content">
+          <% if user_signed_in? %>
+            <div id="likes_buttons_<%= @lyric.id %>">
+              <%= render partial: 'likes/like', locals: { lyric: @lyric } %>
+            </div>
+          <% end %>
+        </div>
+        <div class="right-content">
+          <div class="icon-name">
+            <%= link_to @lyric.user.nickname, user_path(@lyric.user.id), method: :get %>
+          </div>
+          <div class="icon">
+            <%= link_to image_tag(@lyric.user.image.url, class: "icon-mini"), user_path(@lyric.user.id)%>
+          </div>
         </div>
       </div>
+    </div>
+    <% if user_signed_in? %>
+      <div class="content">
+        <div class="comment-form">
+          <%= render partial: 'comments/form', locals: { comment: @comment, lyric: @lyric } %>
+        </div>
+      </div>
+    <% end %>
+    <div class="comments">
+      <div id="comments_area">
+        <%= render partial: 'comments/index', locals: { comments: @comments } %>
+      </div>
+    </div>
   </div>
+
 </div>

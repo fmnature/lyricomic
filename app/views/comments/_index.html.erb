@@ -1,12 +1,22 @@
 <% comments.each do |comment| %>
   <div class="comment">
-    <p>
-      <%= image_tag(comment.user.image.url, class: "icon-mini") %>
-      <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}", remote: true %>：</strong>
-      <%= comment.content %>
-    </p>
-    <% if user_signed_in? && current_user.id == comment.user_id %>
-      <%= link_to '削除', lyric_comment_path(comment.lyric.id,comment.id), method: :delete, remote: true %>
-    <% end %>
+
+    <div class="comment-left">
+      <div class="comment-icon">
+        <%= image_tag(comment.user.image.url, class: "icon-mini") %>
+      </div>
+      <div class="comment-name">
+        <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}", remote: true %>：</strong>
+      </div>
+      <div class="comment-word">
+        <%= comment.content %>
+      </div>
+    </div>
+
+    <div class="comment-right">
+      <% if user_signed_in? && current_user.id == comment.user_id %>
+        <%= link_to(content_tag(:i, nil, class: 'fas fa-trash-alt'),lyric_comment_path(comment.lyric.id,comment.id), method: :delete, remote: true ) %>
+      <% end %>
+    </div>
   </div>
 <% end %>

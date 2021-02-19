@@ -19,7 +19,6 @@ ul,li {
   padding: 0px;
 }
   
-
 .header {
   background-color:rgb(15, 31, 15);
   border-bottom: 0.5px solid rgb(31, 48, 31);
@@ -28,13 +27,22 @@ ul,li {
   padding: 0 40px;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 a {
   text-decoration: none;
-  color: #eeeeee;
+  color:rgb(233, 233, 233);
 }
 
+a:hover{
+  color: white;
+  transition-duration: 0.2s;
+}
+
+.field {
+  padding-top: 30px;
+}
 
 .create-lyric {
   margin-left: 20px;
@@ -57,6 +65,7 @@ a {
 
 .post:hover {
   background: #f56500;
+  transition-duration: 0.2s;
 }
 
 .header-main{
@@ -71,7 +80,8 @@ a {
 
 .search-form input,
 .search-form form{
-  margin: 10px 0;
+  margin: 5px 0;
+  height: 30px;
 }
 
 .search-input{
@@ -80,24 +90,30 @@ a {
   background-color: rgb(10, 20, 10);
   padding-left: 10px;
   width: 600px;
+  
 }
 
 .search-btn{
   background-color: rgb(31, 48, 31);
-  color: #eeeeee;
-}
-
-.search-form input[type="submit"]{
-  padding: 4px 15px;
+  color:rgb(131, 130, 130);
   border: none;
+  padding: 4px 15px;
+  margin: 5px 0;
+  height: 30px;
 }
 
-.search-form input[type="submit"]:hover{
+
+.search-btn:hover{
   background-color: rgb(46, 73, 46);
+  transition-duration: 0.2s;
 }
 
 .header-left {
   width: 260px;
+}
+
+.lyric-icon{
+ height: 43px;
 }
 
 .header-right {
@@ -110,19 +126,20 @@ a {
   margin-right: 20px;
 }
 
+.user-action{
+  padding: 15px;
+}
+
 .wrapper {
   display: flex;
 }
 
-.icon-image {
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
-  object-fit: cover;
+.ri {
+  display: inline-block;
+  margin-top: 5px;
 }
 
 .icon-mini {
-  margin-right: 10px;
   width: 40px;
   height: 40px;
   border-radius: 100px;
@@ -133,17 +150,31 @@ a {
   display:flex;
 }
 
-.user-profile {
-  padding: 20px;
-}
-
 /************ コメント機能 *************/
 
+.comment-form {
+  padding: 12px 0 15px 0;
+}
+
 .comment {
-  text-align: left;
-  border-top: 0.5px solid rgb(31, 48, 31);
-  padding: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px solid rgb(31, 48, 31);
+  padding: 50px 20px;
   background-color:  rgb(13, 26, 13);
+}
+
+.comment-left {
+  display: flex;
+}
+
+.comment-name {
+  margin-top: 15px;
+}
+
+.comment-word {
+  margin-top: 10px;
+  font-size: 20px;
 }
 
 .comment:hover {
@@ -175,30 +206,32 @@ a {
 
 .contents {
   font-size: 20px;
-  color: white;
+  color: rgb(235, 235, 235);
   background-color: rgb(13, 26, 13);
   height: calc(100vh - 55px);
+  width: 100%;
 }
 
 .tem {
-  height: 100vh;
+  height: calc(100vh - 55px);
 }
 
 .content {
   position: relative;
   background-color: rgb(13, 26, 13);
-  border-top: 0.5px solid rgb(31, 48, 31);
+  border-bottom: 0.5px solid rgb(31, 48, 31);
+  padding: 0 38px;
 }
 
 .hi-content {
-  padding: 40px 20px;
+  padding: 80px 0;
 }
 
 .low-content{
-  padding: 10px;
   display:flex;
   justify-content: space-between;
-
+  height: 50px;
+  padding-bottom: 52px;
 }
 
 .link-content {
@@ -211,13 +244,22 @@ a {
   z-index: 1;
 }
 
-/* .like-btn{
-  position: relative;
-} */
-
 .content:hover{
   background-color: rgb(13, 32, 13);
   transition-duration: 0.2s;
+}
+
+.content-image {
+  display: block;
+  text-align: center;
+}
+
+.lyric-image{
+  margin-bottom: 20px;
+  border-radius: 10px;
+  width: 700px;
+  height: 400px;
+  object-fit: cover; 
 }
 
 /* ***** いいね機能 ****** */
@@ -226,16 +268,18 @@ a {
   width: 25px;
   height: 25px;
   font-size: 25px;
-  margin-left: 20px;
-  color:rgb(146, 145, 145);
-  }
- 
+  color:rgb(131, 130, 130);
+}
+
 .unlike-btn {
   width: 25px;
   height: 25px;
   font-size: 25px;
   color: #e54747;
-  margin-left: 20px;
+}
+
+.left-content span{
+  color:rgb(146, 145, 145);
 }
 
 /* .com {
@@ -246,7 +290,11 @@ a {
 } */
 
 .word {
-  font-size: 20px;
+  font-size: 24px;
+  width: 100%;
+  word-break: keep-all;
+  line-height: 59px;
+  text-align: center;
 }
 
 .user-name {
@@ -255,12 +303,20 @@ a {
 
 .right-content {
   z-index: 2;
+  display: flex;
+  height: 100%;
+}
+
+.icon-name{
+  margin-top: 9px;
+  margin-right: 15px;
   display: inline-block;
 }
 
 .left-content {
+  padding-top: 8px;
+  padding-left: 13px;
   z-index: 2;
-  margin: 10px auto 0 0;
   display:inline-block;
 }
 
@@ -285,11 +341,10 @@ h3{
 }
 
 .container{
-  margin: 0 auto;
-  text-align: center;
-  width: 700px;
-  height: 100%;
-  border: 0.5px solid rgb(31, 48, 31);
+  position: relative;
+  background-color: rgb(13, 26, 13);
+  border-top: 0.5px solid rgb(31, 48, 31);
+  padding: 0 38px;
 }
 
 .follow form input,
@@ -297,7 +352,7 @@ h3{
 .contents form textarea {
   color: #fff;
   width: 100%;
-  margin: 10px 0;
+  margin-top: 8px;
   background-color: rgb(15, 31, 15);
   padding: 10px;
   border: 0.5px solid rgb(31, 48, 31);
@@ -308,7 +363,7 @@ h3{
 .content form input[type="submit"],
 .container form input[type="submit"] {
   width: 180px;
-  background-color: #b44f07;
+  background-color: #9c4506;
   border-radius: 20px;
   color: #fff;
   border: 0;
@@ -318,13 +373,76 @@ h3{
 .follow form input[type="submit"]:hover,
 .content form input[type="submit"]:hover,
 .container form input[type="submit"]:hover {
-  background-color: #f56500;
+  background-color: #d85d05;
+  transition-duration: 0.2s;
+}
+
+
+/********* ユーザープロフィール **********/
+
+.user-content {
+  padding: 40px 70px 10px 70px;
+  border-bottom: 0.5px solid rgb(31, 48, 31);
+}
+
+.user-menu-content{
+  text-align: right;
+  margin-right: 10px;
+}
+
+.hi-user-content {
+  padding-right: 40px;
+  display: flex;
+  justify-content: center;
+  height: 230px;
+}
+
+.right-user-content{
+  margin-top: 35px;
+  margin-left: 70px;
+}
+
+.category-name {
+  margin-left: 30px;
+  margin-top: 18px;
+  font-size: 25px;
+}
+
+.icon-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  object-fit: cover;
+  margin-left: 15px;
+}
+
+.user-name-show {
+  display: flex;
+}
+
+.user-nickname {
+  font-size: 32px;
+}
+
+.user-index {
+  margin-top: 20px;
 }
 
 /* フォロー機能 */
 
 .follow {
-  padding:30px 0;
+  padding-top:10px;
+  padding-left: 20px;
+}
+
+.follow-container {
+  padding: 20px 20px;
+  border-bottom: 0.5px solid rgb(31, 48, 31);
+}
+
+.notice {
+  padding: 30px;
+  border-bottom: 0.5px solid rgb(31, 48, 31);
 }
 
 /* サイドバー編集 */
@@ -336,12 +454,10 @@ h3{
   border-right: 0.5px solid rgb(31, 48, 31);
 }
 
-
-
 .side-content {
-  margin-top: 30px;
-  text-align: center;
-  font-size: 20px;
+  padding-left: 20px;
+  text-align: left;
+  font-size: 25px;
 }
 
 

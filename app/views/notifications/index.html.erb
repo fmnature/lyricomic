@@ -1,4 +1,4 @@
-<%= render "shared/header" %>
+<div class="scroll" data-max="20" data-lastnum="2">
 <% notifications = @notifications.where.not(sender_id: current_user.id) %>
 <div class="contents">
   <% if notifications.exists? %>
@@ -8,4 +8,5 @@
   <% else %>
     <p>通知はありません</p>
   <% end %>
+</div>
 </div>
