@@ -174,7 +174,7 @@ a:hover{
 
 .comment-word {
   margin-top: 10px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .comment:hover {
@@ -404,7 +404,7 @@ h3{
 
 .category-name {
   margin-left: 30px;
-  margin-top: 15px;
+  margin-top: 18px;
   font-size: 25px;
 }
 
@@ -433,6 +433,16 @@ h3{
 .follow {
   padding-top:10px;
   padding-left: 20px;
+}
+
+.follow-container {
+  padding: 20px 20px;
+  border-bottom: 0.5px solid rgb(31, 48, 31);
+}
+
+.notice {
+  padding: 30px;
+  border-bottom: 0.5px solid rgb(31, 48, 31);
 }
 
 /* サイドバー編集 */
