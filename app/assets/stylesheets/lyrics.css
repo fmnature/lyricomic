@@ -157,23 +157,34 @@ a:hover{
 }
 
 .comment {
+  border-bottom: 0.5px solid rgb(31, 48, 31);
+  padding: 45px 20px 10px 20px;
+  background-color:  rgb(13, 26, 13);
+}
+
+.hi-comment {
   display: flex;
   justify-content: space-between;
-  border-bottom: 0.5px solid rgb(31, 48, 31);
-  padding: 50px 20px;
-  background-color:  rgb(13, 26, 13);
+
 }
 
 .comment-left {
   display: flex;
 }
 
+.low-comment {
+  padding-top: 5px; 
+  text-align: right;
+}
+
 .comment-name {
-  margin-top: 15px;
+  margin-top: 10px;
+  margin-left:5px;
 }
 
 .comment-word {
   margin-top: 10px;
+  margin-left: 8px;
   font-size: 20px;
 }
 

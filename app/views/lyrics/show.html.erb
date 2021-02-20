@@ -12,7 +12,12 @@
       <div class="content-image">
         <%= image_tag @lyric.image.variant(resize: '500x500'), class: 'lyric-image' if @lyric.image.attached? %>
       </div>
-
+        <% if user_signed_in? && current_user.id == @lyric.user_id %>
+          <div class="more">
+            <%= link_to '編集', edit_lyric_path(@lyric.id), method: :get %>
+            <%= link_to '削除', lyric_path(@lyric.id), method: :delete %>
+          </div>
+        <% end %>
       <div class="low-content">
         <div class="left-content">
           <% if user_signed_in? %>
