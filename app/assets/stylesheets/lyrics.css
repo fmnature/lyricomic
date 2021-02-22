@@ -395,7 +395,6 @@ h3{
 
 .user-menu-content{
   text-align: right;
-  margin-right: 10px;
 }
 
 .hi-user-content {
@@ -411,8 +410,8 @@ h3{
 }
 
 .category-name {
-  margin-left: 40px;
-  margin-top: 23px;
+  margin-left: 35px;
+  margin-top: 26px;
   font-size: 22px;
 }
 
@@ -429,14 +428,23 @@ h3{
 }
 
 .user-nickname {
-  font-size: 32px;
+  font-size: 35px;
 }
 
 .user-index {
+  display: flex;
   margin-top: 20px;
 }
 
+.index {
+  padding: 20px 10px 0 10px;
+  width: 33%;
+  text-align: center;
+  color:rgb(146, 145, 145);
+}
+
 .edit-icon-show{
+  margin-top: 7px;
   font-size: 23px;
 }
 
@@ -471,7 +479,6 @@ h3{
   text-align: left;
   font-size: 25px;
 }
-
 
 .right-side-bar {
   background-color: rgb(15, 31, 15);

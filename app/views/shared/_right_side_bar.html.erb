@@ -1,5 +1,8 @@
 <div class="side-content">
   <% if user_signed_in? %>
+    <div class="user-show-content">
+      <p>プロフィール</p>
+    </div>
     <div class="user-edit-content">
       <div class="edit-icon">
         <%= link_to(content_tag(:i, nil, class: 'fas fa-user-edit gray'),edit_user_registration_path(@id), method: :get) %>

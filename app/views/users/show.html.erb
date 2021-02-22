@@ -35,15 +35,26 @@
           <p><%= @profile %></p>
         </div>
       <% end %>
-
       <div class="user-index">
-        <p>リリック一覧</p>
+        <div class="index">
+          <p>リリック</p>
+        </div>
+        <div class="index">
+          <p>いいね</p>
+        </div>
+        <div class="index">
+          <p>コメント</p>
+        </div>
       </div>
     </div>
 
 
-    <% @lyrics.each do |lyric| %>
-      <%= render partial: 'lyrics/content', locals: { lyric: lyric } %>
-    <% end %>
+
+    <div>
+      <% @lyrics.each do |lyric| %>
+        <%= render partial: 'lyrics/content', locals: { lyric: lyric } %>
+      <% end %>
+    </div>
+    
   </div>
 </div>
