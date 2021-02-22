@@ -46,7 +46,7 @@ a:hover{
 
 .create-lyric {
   margin-left: 20px;
-  padding: 11px 27px;
+  padding: 15px 27px;
   background-color: #b44f07;
   border-radius: 100vh;
   text-decoration: none;
@@ -57,7 +57,7 @@ a:hover{
 }
 
 .post {
-  padding: 11px 27px;
+  padding: 15px 27px;
   background-color: #b44f07;
   border-radius: 100vh;
   text-decoration: none;
