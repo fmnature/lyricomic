@@ -175,16 +175,17 @@ a:hover{
 .low-comment {
   padding-top: 5px; 
   text-align: right;
+  height: 35px;
 }
 
 .comment-name {
   margin-top: 10px;
-  margin-left:5px;
+  margin-left: 10px;
 }
 
 .comment-word {
   margin-top: 10px;
-  margin-left: 8px;
+  margin-left: 9px;
   font-size: 20px;
 }
 
@@ -197,8 +198,9 @@ a:hover{
 
 .n-circle {
   position: absolute;
-  padding-left: 1rem;
-  padding-top: 0rem;
+  padding-left: 0.9rem;
+  padding-top: 0.6rem;
+  font-size: 0.9rem;
   color: #efa04c;
 }
 
@@ -409,9 +411,9 @@ h3{
 }
 
 .category-name {
-  margin-left: 30px;
-  margin-top: 18px;
-  font-size: 25px;
+  margin-left: 40px;
+  margin-top: 23px;
+  font-size: 22px;
 }
 
 .icon-image {
@@ -434,6 +436,11 @@ h3{
   margin-top: 20px;
 }
 
+.edit-icon-show{
+  font-size: 23px;
+}
+
+
 /* フォロー機能 */
 
 .follow {
@@ -448,7 +455,6 @@ h3{
 
 .notice {
   padding: 30px;
-  border-bottom: 0.5px solid rgb(31, 48, 31);
 }
 
 /* サイドバー編集 */
@@ -475,3 +481,19 @@ h3{
   border-left: 0.5px solid rgb(31, 48, 31);
 }
 
+.user-edit-content{
+  padding: 10px 0;
+}
+
+.user-profile-content{
+  padding: 10px 0;
+}
+
+.notice-word {
+  padding-left: 5px;
+}
+
+
+.edit-icon{
+  font-size: 28px;
+}

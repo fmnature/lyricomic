@@ -6,7 +6,7 @@
           <img src=<%= @image %> class = "icon-image">
           <% if user_signed_in? && current_user.id == @id %>
             <div class="user-menu-content">
-              <%= link_to(content_tag(:i, nil, class: 'fas fa-user-edit'),edit_user_registration_path(@id), method: :get) %>
+              <%= link_to(content_tag(:i, nil, class: 'fas fa-user-edit edit-icon-show'),edit_user_registration_path(@id), method: :get) %>
               <%= render "notifications/circle" %>
             </div>
           <% end %>
