@@ -483,17 +483,35 @@ h3{
 
 .user-edit-content{
   padding: 10px 0;
+  display: flex;
 }
 
 .user-profile-content{
   padding: 10px 0;
+  display: flex;
+}
+
+.notice-icon {
+  width: 50px;
 }
 
 .notice-word {
-  padding-left: 5px;
+  padding-top: 0px;
 }
-
 
 .edit-icon{
   font-size: 28px;
+  width: 50px;
+}
+
+.edit-word {
+  padding-top: 4px;
+}
+
+.gray {
+  color:rgb(146, 145, 145);
+}
+
+.gray:hover{
+  color: white;
 }
