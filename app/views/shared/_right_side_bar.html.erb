@@ -1,7 +1,7 @@
 <div class="side-content">
   <% if user_signed_in? %>
     <div class="user-show-content">
-      <p>プロフィール</p>
+      <%= link_to 'プロフィール', user_path(current_user.id), method: :get, class: "gray" %>
     </div>
     <div class="user-edit-content">
       <div class="edit-icon">

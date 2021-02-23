@@ -1,0 +1,6 @@
+$('#content_area').val("")
+$("#content_area").html("
+<% @user.likes.each do |like|%>
+  <%= render partial: 'lyrics/content', locals: { lyric: like.lyric } %>
+<% end %>
+")
