@@ -40,7 +40,7 @@
           <%= link_to "リリック",'#', class: "gray lyrics-show-btn", remote: true %>
         </div>
         <div class="index">
-          <%= link_to "いいね", user_path, class: "gray likes-show-btn", remote: true %>
+          <%= link_to "いいね", user_path , class: "gray likes-show-btn", remote: true %>
         </div>
         <div class="index">
           <%= link_to "コメント", '#', class: "gray comments-show-btn", remote: true %>
@@ -49,10 +49,20 @@
     </div>
 
     <div id="content-area">
-      <%# <% @lyrics.each do |lyric| %> %>
-        <%# <%= render partial: 'lyrics/content', locals: { lyric: lyric } %> %>
-      <%# <% end %> %>
+      <% @lyrics.each do |lyric| %>
+        <%= render partial: 'content', locals: { lyric: lyric } %>
+      <% end %>
     </div>
+
+    <p>いいねした投稿</p>
+    <% @user.likes.each do |like| %>
+      <%= render partial: 'content', locals: { lyric: like.lyric } %>
+    <% end %>
+
+    <p>コメントした投稿</p>
+    <% @user.comments.each do |comment| %>
+      <%= render partial: 'content', locals: { lyric: comment.lyric } %>
+    <% end %>
 
   </div>
 </div>
