@@ -1,9 +1,7 @@
 <div class="scroll" data-max="20" data-lastnum="2">
   <div class="contents">
     <div class="jscroll">
-      <% @lyrics.each do |lyric| %>
-        <%= render partial: 'content', locals: { lyric: lyric } %>
-      <% end %>
+      <%= render partial: 'content', locals: { lyrics: @lyrics } %>
       <div class="skill-list">
         <%= link_to_prev_page @lyrics, '前のページ', class: "prev" %>
         <%= link_to_next_page @lyrics, '次のページ', class: "next" %>
