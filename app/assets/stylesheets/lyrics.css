@@ -46,7 +46,7 @@ a:hover{
 
 .create-lyric {
   margin-left: 20px;
-  padding: 11px 27px;
+  padding: 15px 27px;
   background-color: #b44f07;
   border-radius: 100vh;
   text-decoration: none;
@@ -57,7 +57,7 @@ a:hover{
 }
 
 .post {
-  padding: 11px 27px;
+  padding: 15px 27px;
   background-color: #b44f07;
   border-radius: 100vh;
   text-decoration: none;
@@ -157,23 +157,35 @@ a:hover{
 }
 
 .comment {
+  border-bottom: 0.5px solid rgb(31, 48, 31);
+  padding: 45px 20px 10px 20px;
+  background-color:  rgb(13, 26, 13);
+}
+
+.hi-comment {
   display: flex;
   justify-content: space-between;
-  border-bottom: 0.5px solid rgb(31, 48, 31);
-  padding: 50px 20px;
-  background-color:  rgb(13, 26, 13);
+
 }
 
 .comment-left {
   display: flex;
 }
 
+.low-comment {
+  padding-top: 5px; 
+  text-align: right;
+  height: 35px;
+}
+
 .comment-name {
-  margin-top: 15px;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .comment-word {
   margin-top: 10px;
+  margin-left: 9px;
   font-size: 20px;
 }
 
@@ -182,17 +194,13 @@ a:hover{
   transition-duration: 0.2s;
 }
 
-/* .comment:hover {
-  background-color: rgb(13, 32, 13);
-  transition-duration: 0.2s;
-} */
-
 /* 通知機能 */
 
 .n-circle {
   position: absolute;
-  padding-left: 1rem;
-  padding-top: 0rem;
+  padding-left: 0.9rem;
+  padding-top: 0.6rem;
+  font-size: 0.9rem;
   color: #efa04c;
 }
 
@@ -387,7 +395,6 @@ h3{
 
 .user-menu-content{
   text-align: right;
-  margin-right: 10px;
 }
 
 .hi-user-content {
@@ -403,9 +410,9 @@ h3{
 }
 
 .category-name {
-  margin-left: 30px;
-  margin-top: 18px;
-  font-size: 25px;
+  margin-left: 35px;
+  margin-top: 26px;
+  font-size: 22px;
 }
 
 .icon-image {
@@ -421,12 +428,26 @@ h3{
 }
 
 .user-nickname {
-  font-size: 32px;
+  font-size: 35px;
 }
 
 .user-index {
+  display: flex;
   margin-top: 20px;
 }
+
+.index {
+  padding: 20px 10px 0 10px;
+  width: 33%;
+  text-align: center;
+  color:rgb(146, 145, 145);
+}
+
+.edit-icon-show{
+  margin-top: 7px;
+  font-size: 23px;
+}
+
 
 /* フォロー機能 */
 
@@ -442,7 +463,6 @@ h3{
 
 .notice {
   padding: 30px;
-  border-bottom: 0.5px solid rgb(31, 48, 31);
 }
 
 /* サイドバー編集 */
@@ -460,7 +480,6 @@ h3{
   font-size: 25px;
 }
 
-
 .right-side-bar {
   background-color: rgb(15, 31, 15);
   color:rgb(146, 145, 145);
@@ -469,3 +488,37 @@ h3{
   border-left: 0.5px solid rgb(31, 48, 31);
 }
 
+.user-edit-content{
+  padding: 10px 0;
+  display: flex;
+}
+
+.user-profile-content{
+  padding: 10px 0;
+  display: flex;
+}
+
+.notice-icon {
+  width: 50px;
+}
+
+.notice-word {
+  padding-top: 0px;
+}
+
+.edit-icon{
+  font-size: 28px;
+  width: 50px;
+}
+
+.edit-word {
+  padding-top: 4px;
+}
+
+.gray {
+  color:rgb(146, 145, 145);
+}
+
+.gray:hover{
+  color: white;
+}

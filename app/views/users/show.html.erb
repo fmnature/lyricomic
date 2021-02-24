@@ -6,7 +6,7 @@
           <img src=<%= @image %> class = "icon-image">
           <% if user_signed_in? && current_user.id == @id %>
             <div class="user-menu-content">
-              <%= link_to(content_tag(:i, nil, class: 'fas fa-user-edit'),edit_user_registration_path(@id), method: :get) %>
+              <%= link_to(content_tag(:i, nil, class: 'fas fa-user-edit edit-icon-show gray'),edit_user_registration_path(@id), method: :get) %>
               <%= render "notifications/circle" %>
             </div>
           <% end %>
@@ -21,8 +21,8 @@
             </div>
           </div>
           <div class="follow-content">
-            <%= link_to "フォロー: #{@user.followings.count}", followings_user_path(@user.id) %>
-            <%= link_to "フォロワー: #{@user.followers.count}", followers_user_path(@user.id) %>
+            <%= link_to "フォロー: #{@user.followings.count}", followings_user_path(@user.id), class: "gray" %>
+            <%= link_to "フォロワー: #{@user.followers.count}", followers_user_path(@user.id), class: "gray" %>
           </div>
           <div class="follow">
             <%= render "relationships/follow_button", user: @user %>
@@ -35,15 +35,24 @@
           <p><%= @profile %></p>
         </div>
       <% end %>
-
       <div class="user-index">
-        <p>リリック一覧</p>
+        <div class="index">
+          <%= link_to "リリック",'#', class: "gray lyrics-show-btn", remote: true %>
+        </div>
+        <div class="index">
+          <%= link_to "いいね", user_path, class: "gray likes-show-btn", remote: true %>
+        </div>
+        <div class="index">
+          <%= link_to "コメント", '#', class: "gray comments-show-btn", remote: true %>
+        </div>
       </div>
     </div>
 
+    <div id="content-area">
+      <%# <% @lyrics.each do |lyric| %> %>
+        <%# <%= render partial: 'lyrics/content', locals: { lyric: lyric } %> %>
+      <%# <% end %> %>
+    </div>
 
-    <% @lyrics.each do |lyric| %>
-      <%= render partial: 'lyrics/content', locals: { lyric: lyric } %>
-    <% end %>
   </div>
 </div>
