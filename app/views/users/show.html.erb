@@ -37,21 +37,22 @@
       <% end %>
       <div class="user-index">
         <div class="index">
-          <%= link_to "リリック", followings_user_path(@user.id), class: "gray", remote: true %>
+          <%= link_to "リリック",'#', class: "gray lyrics-show-btn", remote: true %>
         </div>
         <div class="index">
-          <%= link_to "いいね", followings_user_path(@user.id), class: "gray", remote: true %>
+          <%= link_to "いいね", user_path, class: "gray likes-show-btn", remote: true %>
         </div>
         <div class="index">
-          <%= link_to "コメント", followings_user_path(@user.id), class: "gray", remote: true %>
+          <%= link_to "コメント", '#', class: "gray comments-show-btn", remote: true %>
         </div>
       </div>
     </div>
 
     <div id="content-area">
-      <% @lyrics.each do |lyric| %>
-        <%= render partial: 'lyrics/content', locals: { lyric: lyric } %>
-      <% end %>
+      <%# <% @lyrics.each do |lyric| %> %>
+        <%# <%= render partial: 'lyrics/content', locals: { lyric: lyric } %> %>
+      <%# <% end %> %>
     </div>
+
   </div>
 </div>

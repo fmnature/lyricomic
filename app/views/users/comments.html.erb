@@ -1,0 +1,3 @@
+<% @user.comments.each do |comment|%>
+  <%= render partial: 'lyrics/content', locals: { lyric: comment.lyric } %>
+<% end %>
