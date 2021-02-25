@@ -64,3 +64,4 @@ gem 'carrierwave'
 gem 'jquery-rails'
 gem 'active_hash'
 gem 'kaminari'
+gem 'google-cloud-vision', require: false
