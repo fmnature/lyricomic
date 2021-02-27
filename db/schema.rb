@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_11_022459) do
+ActiveRecord::Schema.define(version: 2021_02_27_082537) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -80,6 +80,13 @@ ActiveRecord::Schema.define(version: 2021_02_11_022459) do
     t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
+  create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_rooms_on_user_id"
+  end
+
   create_table "taggings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "lyric_id"
     t.bigint "tag_id"
@@ -116,6 +123,7 @@ ActiveRecord::Schema.define(version: 2021_02_11_022459) do
   add_foreign_key "likes", "users"
   add_foreign_key "relationships", "users"
   add_foreign_key "relationships", "users", column: "follow_id"
+  add_foreign_key "rooms", "users"
   add_foreign_key "taggings", "lyrics"
   add_foreign_key "taggings", "tags"
 end

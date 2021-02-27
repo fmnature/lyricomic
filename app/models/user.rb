@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :lyrics, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :messages, dependent: :destroy
+  has_many :entries, dependent: :destroy
 
   has_many :relationships, foreign_key: "user_id", dependent: :destroy
   has_many :followings, through: :relationships, source: :follow, dependent: :destroy

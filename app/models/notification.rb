@@ -18,7 +18,7 @@ class Notification < ApplicationRecord
       # 30日以内なら
       (Date.today - self.created_at.to_date).to_i.to_s + "日前"
     else
-      #　それ以降
+      # それ以降
       self.created_at
     end
   end
